@@ -7,7 +7,7 @@ published: true
 
 ## About Me
 
-I'm a graduate student in Computer Engineering at the College of Engineering, Boston U.
+I'm a graduate student in Computer Engineering at the College of Engineering, Boston U. 📚💻😎
 
 ### Contact me
 
