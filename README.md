@@ -1,1 +1,1 @@
-This is the repo for my personal website, forked from Barry Clark's excellent repo [[here](https://github.com/barryclark/jekyll-now "here")].
+This is the repo for my personal website, forked from Barry Clark's excellent repo [here](https://github.com/barryclark/jekyll-now "here").
