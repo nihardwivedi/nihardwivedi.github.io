@@ -1,5 +1,5 @@
 ---
 layout: post
-title: You're up and running!
+title: First blog! Explains my site setup.
 published: true
 ---
