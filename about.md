@@ -7,9 +7,7 @@ published: true
 
 ## About Me
 
-I'm a graduate student in Computer Engineering at the College of Engineering, Boston U. 📚💻😎
+I'm a graduate student in Computer Engineering at the College of Engineering, Boston University. 📚💻😎
 
 ### Contact me
-
-[LinkedIn](https://www.linkedin.com/in/nihardwivedi/)
-[Github](https://github.com/nihardwivedi)
+Send me an [email](ndwivedi@bu.edu) or click the buttons at the bottom of the page for my profiles on these websites. 😁👇
