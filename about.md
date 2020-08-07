@@ -7,7 +7,7 @@ published: true
 
 ## About Me
 
-I'm a graduate student in Computer Engineering at the College of Engineering, Boston University. 📚💻😎
+I'm a graduate student in Computer Engineering at the College of Engineering, Boston University. 📚💻😎  
 I've been a builder and tinkerer since dissassembling my first PC at age 9. I like to strum the guitar and hum tunes in my spare time. 🕹🎸🎶🎙🎹
 
 ### Contact me
