@@ -4,7 +4,7 @@ title: Nihar Dwivedi
 permalink: /
 ---
 ![](nihar.jpg)
-Hello, I'm Nihar. Welcome to my profile! I’ve been a builder and tinkerer since disassembling my first PC at age 9. I like building highly scalable and reliable infrastructure for applications that have global scale and [reach](https://xkcd.com/974/).<br/><br/>
+Hello, I'm Nihar. Welcome to my website! I’ve been a builder and tinkerer since disassembling my first PC at age 9. I like building highly scalable and reliable infrastructure for applications that have global scale and [reach](https://xkcd.com/974/).<br/><br/>
 
 I’m currently a graduate student in Computer Engineering at the College of Engineering, Boston University. 📚💻😎 <br/>  
 My current areas of interest include secure containerized applications, ML and Cloud infrastructure, and IaaS. Past interests have included React, GraphQL, Redis amongst other web technologies.<br/><br/>
