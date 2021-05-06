@@ -15,7 +15,7 @@ You can find a few of the projects I've built on my [Github](https://github.com/
 
 I strum the guitar whilst humming tunes for fun. If I’m unreachable I’m probably reading Hacker News or playing a video game. 🕹🎸🎶  I’m also an ardent fan of science fiction, and I’m currently reading The Broken Earth series and plan to read the Three Body Problem next.<br/><br/>
 
-My dream job would a fun mix of product and cloud engineering. If this sounds like a role you're hiring for, feel free to reach out! I'll be graduating in January, and am actively looking for jobs.<br/>
+My dream job would a fun mix of product and cloud engineering. If this sounds like a role you're hiring for, feel free to reach out! I graduated in January, and am actively looking for jobs.<br/>
 
 ### Contact me
 Click the buttons below. 😁👇 <br/>
