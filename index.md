@@ -6,7 +6,7 @@ permalink: /
 ![](nihar.jpg)
 Hello, I'm Nihar. Welcome to my website! I’ve been a builder and tinkerer since disassembling my first PC at age 9. I like building highly scalable and reliable infrastructure for applications that have global scale and [reach](https://xkcd.com/974/).<br/><br/>
 
-I’m currently a Senior Site Reliability Engineer at a [cybersecurity scaleup](https://www.securonix.com/). I work at the intersection of Operations, R&D, and SWE so my work involves everything from arm-twisting AWS into launching new (previously unavailable) Redis instances overnight to debugging production code only to find the issue is an edge case. 😎<br/>
+I’m currently a Senior Site Reliability Engineer at a [cybersecurity scaleup](https://www.securonix.com/). I work at the intersection of Operations, R&D, and SWE so my work involves everything from arm-twisting AWS into launching new (previously unavailable) Redis instances overnight to debugging unknown edge cases in production code. <br/>
 I'm a Computer Engineering graduate of the College of Engineering, Boston University. 📚💻 <br/>
 My current areas of interest include containerized applications, Distributed Computing, Cloud infrastructure, and IaC. Past interests have included React, GraphQL, etc amongst other web technologies.<br/><br/>
 
