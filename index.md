@@ -14,7 +14,7 @@ In the past, I’ve been a software engineering intern at Deloitte and worked in
 
 You can find a few of the projects I've built on my [Github](https://github.com/nihardwivedi).  <br/>
 
-I strum the guitar whilst humming tunes for fun. If I’m unreachable I’m probably reading Hacker News or playing a video game. I’m also an ardent fan of science fiction, and I’m currently reading Dark Matter~~The Broken Earth series and plan to read the Three Body Problem next~~.<br/><br/>
+I strum the guitar whilst humming tunes for fun. If I’m unreachable I’m probably reading Hacker News or playing a video game. I’m also an ardent fan of science fiction, and I’m currently reading Dark Matter by Blake Crouch. ~~The Broken Earth series and plan to read the Three Body Problem next~~<br/><br/>
 
 My dream job would be a fun mix of product and cloud engineering. If this sounds like a role you're hiring for, feel free to reach out!<br/>
 
