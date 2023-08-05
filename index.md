@@ -4,7 +4,7 @@ title: Nihar Dwivedi
 permalink: /
 ---
 ![](nihar.jpg)
-Hello, I'm Nihar. Welcome to my website! I’ve been a builder and tinkerer since disassembling my first PC at age 9. I like building highly scalable and reliable infrastructure for applications that have global scale and [reach](https://xkcd.com/974/).<br/><br/>
+Hello, I'm Nihar. Welcome to my website! I'm interested in solving complex problems involving infrastructure for applications that have global [reach](https://xkcd.com/974/). I’ve been a builder and tinkerer since building my first PC at age 9. <br/><br/>
 
 I’m currently a Senior Site Reliability Engineer at a [cybersecurity scaleup](https://www.securonix.com/). I work at the intersection of Operations, R&D, and SWE so my work involves everything from arm-twisting AWS into launching new (previously unavailable) Redis instances overnight to debugging unknown edge cases in production code. <br/>
 I'm a Jan 2021 Computer Engineering graduate from the College of Engineering, Boston University. <br/>
