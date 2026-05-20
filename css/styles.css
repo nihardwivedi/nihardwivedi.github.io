@@ -1,0 +1,91 @@
+:root {
+  color-scheme: dark;
+  --background: #0f172a;
+  --foreground: #e2e8f0;
+  --muted: #94a3b8;
+  --surface: #111827;
+  --border: #334155;
+  --accent: #38bdf8;
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --muted: #475569;
+  --surface: #ffffff;
+  --border: #cbd5e1;
+  --accent: #0369a1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  min-height: 100vh;
+}
+
+.page {
+  display: grid;
+  gap: 1.5rem;
+  margin: 0 auto;
+  max-width: 48rem;
+  min-height: 100vh;
+  padding: 2rem;
+  place-content: center;
+}
+
+.theme-control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--foreground);
+  cursor: pointer;
+  font: inherit;
+  padding: 0.6rem 1rem;
+}
+
+button:hover,
+button:focus-visible {
+  border-color: var(--accent);
+  outline: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  padding: clamp(2rem, 6vw, 4rem);
+}
+
+.eyebrow {
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  margin: 0 0 0.75rem;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: clamp(2.5rem, 10vw, 5rem);
+  line-height: 1;
+  margin: 0 0 1rem;
+}
+
+p {
+  color: var(--muted);
+  font-size: 1.125rem;
+  margin: 0;
+}
