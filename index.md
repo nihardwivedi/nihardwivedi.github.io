@@ -6,7 +6,7 @@ permalink: /
 
 <section class="hero">
   <p class="eyebrow">Software engineer</p>
-  <h2>About</h2>
+  <h1>About</h1>
   <p>
     I'm Nihar Dwivedi, a software engineer focused on reliable systems,
     infrastructure, and product engineering. I like turning ambiguous problems
