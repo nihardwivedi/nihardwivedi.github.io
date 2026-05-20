@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <main class="page" aria-labelledby="page-title">
+      <div class="theme-control">
+        <button id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
+          Light mode
+        </button>
+      </div>
+
+      <section class="card">
+        <p class="eyebrow">Static site</p>
+        <h1 id="page-title">Home</h1>
+        <p>This site has been reset to a single root page.</p>
+      </section>
+    </main>
+
+    <script>
+      const root = document.documentElement;
+      const toggle = document.getElementById('theme-toggle');
+      const savedTheme = localStorage.getItem('theme');
+
+      function setTheme(theme) {
+        const isDark = theme === 'dark';
+        root.dataset.theme = theme;
+        toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
+        toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+        toggle.setAttribute('aria-pressed', String(isDark));
+        localStorage.setItem('theme', theme);
+      }
+
+      setTheme(savedTheme === 'light' ? 'light' : 'dark');
+      toggle.addEventListener('click', () => {
+        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
+      });
+    </script>
+  </body>
+</html>
