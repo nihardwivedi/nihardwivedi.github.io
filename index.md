@@ -26,13 +26,13 @@ permalink: /
 <section class="home-posts" aria-labelledby="top-blogs">
   <h2 id="top-blogs">Top 3 blogs</h2>
   <div class="posts compact-posts">
-    {% assign short_excerpt_words = 28 %}
+    {% assign excerpt_words = 28 %}
     {% for post in site.posts limit:3 %}
       <article class="post-card">
         <p class="post-date">{{ post.date | date: "%b %-d, %Y" }}</p>
         <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
         <div class="entry">
-          {{ post.excerpt | strip_html | truncatewords: short_excerpt_words }}
+          {{ post.excerpt | strip_html | truncatewords: excerpt_words }}
         </div>
       </article>
     {% endfor %}
