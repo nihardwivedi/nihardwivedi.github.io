@@ -136,9 +136,11 @@ a:focus-visible { outline: 1px solid var(--scarlet); outline-offset: 0.25rem; }
 .neofetch-panel { display: flex; flex-direction: column; min-width: 0; overflow: hidden; }
 .experience-panel .timeline { flex: 1; min-height: 0; overflow-y: auto; padding-right: 0.7rem; scrollbar-color: var(--scarlet) rgba(34, 232, 121, 0.08); scrollbar-width: thin; }
 .timeline { border-left: 1px solid var(--green); margin: 1rem 0 0 0.9rem; padding-left: 1.5rem; }
-.timeline-item { margin-bottom: 1.35rem; position: relative; }
+.timeline-item { border: 1px solid transparent; border-radius: 0.2rem; margin-bottom: 0.55rem; padding: 0.65rem 0.7rem 0.7rem; position: relative; transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
 .timeline-item:last-child { margin-bottom: 0; }
-.timeline-item::before { background: var(--background); border: 2px solid var(--green); border-radius: 50%; content: ""; height: 0.6rem; left: -1.85rem; position: absolute; top: 0.2rem; width: 0.6rem; }
+.timeline-item::before { background: var(--background); border: 2px solid var(--green); border-radius: 50%; content: ""; height: 0.6rem; left: calc(-1.5rem - 0.3rem); position: absolute; top: 0.8rem; transform: translateY(-50%); transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease; width: 0.6rem; }
+.timeline-item:hover, .timeline-item:focus-within { background: rgba(255, 64, 85, 0.07); border-color: var(--scarlet); box-shadow: 0 0 1rem rgba(255, 64, 85, 0.12); }
+.timeline-item:hover::before, .timeline-item:focus-within::before { background: var(--scarlet); border-color: var(--scarlet); box-shadow: 0 0 0.8rem rgba(255, 64, 85, 0.7); }
 .timeline-item time { color: var(--green); font-size: 0.75rem; }
 .timeline-item h3 { color: var(--green-bright); font-size: 0.86rem; margin: 0.15rem 0; text-transform: none; }
 .timeline-item h3 span { color: var(--scarlet); }
