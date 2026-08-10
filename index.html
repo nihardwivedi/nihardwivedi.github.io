@@ -1,71 +1,140 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Nihar Dwivedi</title>
+    <meta name="description" content="Nihar Dwivedi — software engineer focused on reliable systems and infrastructure." />
+    <title>nihar@web:~</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
-    <main class="page" aria-labelledby="page-title">
-      <div class="theme-control">
-        <button id="theme-toggle" type="button" aria-label="Switch to light mode" aria-pressed="true">
-          Light mode
-        </button>
-      </div>
+    <main class="site-shell" aria-labelledby="site-title">
+      <div class="terminal" role="application" aria-label="Nihar Dwivedi personal website">
+        <header class="terminal-bar">
+          <div class="terminal-dots" aria-hidden="true">
+            <span></span><span></span><span></span>
+          </div>
+          <p class="terminal-title">nihar@web:~</p>
+          <p class="terminal-status">online</p>
+        </header>
 
-      <section class="card about-card">
-        <p class="eyebrow">Software engineer</p>
-        <h1 id="page-title">Nihar Dwivedi</h1>
+        <div class="terminal-body">
+          <nav class="site-nav" aria-label="Main navigation">
+            <a class="brand" href="#about" aria-label="Go to home">./nihar</a>
+            <div class="nav-links">
+              <a href="#about" data-route="about">about</a>
+              <a href="#blog" data-route="blog">blog</a>
+              <span class="nav-cursor" aria-hidden="true"></span>
+            </div>
+          </nav>
 
-        <div class="about-copy">
-          <p>
-            I'm Nihar Dwivedi, a software engineer focused on reliable systems,
-            infrastructure, and product engineering. I like turning ambiguous problems
-            into simple, durable software that can grow with the people who use it.
-          </p>
-          <p>
-            My work has spanned site reliability, cloud infrastructure, operations,
-            security, and full-stack development. I'm especially interested in
-            distributed systems, developer platforms, and pragmatic engineering teams.
-          </p>
-          <p>
-            Outside work, I follow software engineering writing, read science fiction,
-            play guitar, and keep an eye out for the next interesting system to build.
-          </p>
+          <div class="command-line" aria-hidden="true">
+            <span class="prompt">$</span> <span id="command-text">cat about.txt</span><span class="cursor"></span>
+          </div>
+
+          <section id="about" class="route-panel" data-panel="about" aria-labelledby="site-title" tabindex="-1">
+            <p class="eyebrow">Software engineer · builder · tinkerer</p>
+            <h1 id="site-title">Nihar Dwivedi</h1>
+            <p class="lede">I build reliable systems and the tools that help people ship them.</p>
+
+            <div class="about-copy">
+              <p>
+                I'm Nihar, a software engineer focused on reliable systems,
+                infrastructure, and product engineering. I like turning ambiguous
+                problems into simple, durable software that can grow with the people
+                who use it.
+              </p>
+              <p>
+                My work has spanned site reliability, cloud infrastructure, operations,
+                security, and full-stack development. I'm especially interested in
+                distributed systems, developer platforms, and pragmatic engineering teams.
+              </p>
+              <p>
+                Earlier in my career, I was a graduate student in Computer Engineering
+                at Boston University and an engineering intern at Deloitte, working on
+                PowerShell and MySQL scripts for database and operating-system audits.
+              </p>
+              <p>
+                Outside work, I read science fiction, play guitar, and keep an eye out
+                for the next interesting system to build.
+              </p>
+            </div>
+
+            <div class="about-grid">
+              <section class="terminal-block" aria-labelledby="now-title">
+                <h2 id="now-title"><span class="prompt">$</span> now</h2>
+                <p>Exploring distributed systems, developer platforms, and software that stays useful under pressure.</p>
+              </section>
+              <section class="terminal-block" aria-labelledby="links-title">
+                <h2 id="links-title"><span class="prompt">$</span> connect</h2>
+                <ul class="social-links" aria-label="Social and contact links">
+                  <li><a href="mailto:ndwivedi@bu.edu"><span aria-hidden="true">→</span> email</a></li>
+                  <li><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> github</a></li>
+                  <li><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> linkedin</a></li>
+                  <li><a href="https://www.twitter.com/2steps2doors" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> twitter</a></li>
+                  <li><a href="nihar_dwivedi_resume.pdf"><span aria-hidden="true">→</span> resume</a></li>
+                </ul>
+              </section>
+            </div>
+          </section>
+
+          <section id="blog" class="route-panel" data-panel="blog" aria-labelledby="blog-title" tabindex="-1" hidden>
+            <p class="eyebrow">/var/log/thoughts</p>
+            <h1 id="blog-title">Blog</h1>
+            <p class="lede">Notes on software, systems, and the things I learn while building.</p>
+
+            <article class="post-card">
+              <div class="post-meta"><span>2020</span><span aria-hidden="true">·</span><span>personal</span></div>
+              <h2><a href="#blog">Stopping Procrastination</a></h2>
+              <p>
+                A recovered note about building this site for the third time, learning
+                by doing, and making the first step small enough to take.
+              </p>
+              <span class="post-command">$ read stopping-procrastination.md</span>
+            </article>
+
+            <p class="blog-footer"><span class="prompt">$</span> more posts are on the way<span class="cursor" aria-hidden="true"></span></p>
+          </section>
+
+          <footer class="terminal-footer">
+            <span>© Nihar Dwivedi</span>
+            <span class="footer-separator" aria-hidden="true">·</span>
+            <span>built with plain html + css</span>
+          </footer>
         </div>
-
-        <section class="contact" aria-labelledby="contact-title">
-          <h2 id="contact-title">Contact me</h2>
-          <ul class="contact-links" aria-label="Contact links">
-            <li><a href="mailto:ndwivedi@bu.edu">Email</a></li>
-            <li><a href="https://github.com/nihardwivedi">GitHub</a></li>
-            <li><a href="https://www.linkedin.com/in/nihardwivedi">LinkedIn</a></li>
-            <li><a href="https://www.twitter.com/2steps2doors">Twitter</a></li>
-            <li><a href="nihar_dwivedi_resume.pdf">Resume</a></li>
-          </ul>
-        </section>
-      </section>
+      </div>
     </main>
 
     <script>
-      const root = document.documentElement;
-      const toggle = document.getElementById('theme-toggle');
-      const savedTheme = localStorage.getItem('theme');
+      const panels = [...document.querySelectorAll('[data-panel]')];
+      const routes = [...document.querySelectorAll('[data-route]')];
+      const commandText = document.getElementById('command-text');
 
-      function setTheme(theme) {
-        const isDark = theme === 'dark';
-        root.dataset.theme = theme;
-        toggle.textContent = isDark ? 'Light mode' : 'Dark mode';
-        toggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
-        toggle.setAttribute('aria-pressed', String(isDark));
-        localStorage.setItem('theme', theme);
+      function showRoute(route, updateHash = true) {
+        const activeRoute = route === 'blog' ? 'blog' : 'about';
+        panels.forEach((panel) => {
+          const active = panel.dataset.panel === activeRoute;
+          panel.hidden = !active;
+          panel.classList.toggle('is-active', active);
+        });
+        routes.forEach((link) => {
+          const active = link.dataset.route === activeRoute;
+          link.classList.toggle('is-active', active);
+          link.setAttribute('aria-current', active ? 'page' : 'false');
+        });
+        commandText.textContent = activeRoute === 'blog' ? 'ls /var/log/thoughts' : 'cat about.txt';
+        if (updateHash && window.location.hash !== `#${activeRoute}`) {
+          history.pushState(null, '', `#${activeRoute}`);
+        }
       }
 
-      setTheme(savedTheme === 'light' ? 'light' : 'dark');
-      toggle.addEventListener('click', () => {
-        setTheme(root.dataset.theme === 'dark' ? 'light' : 'dark');
-      });
+      function routeFromHash() {
+        return window.location.hash.slice(1).toLowerCase();
+      }
+
+      showRoute(routeFromHash(), false);
+      window.addEventListener('hashchange', () => showRoute(routeFromHash(), false));
+      window.addEventListener('popstate', () => showRoute(routeFromHash(), false));
     </script>
   </body>
 </html>
