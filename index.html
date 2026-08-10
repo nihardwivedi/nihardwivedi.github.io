@@ -4,21 +4,21 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Nihar Dwivedi — software engineer, problem solver, and builder." />
-    <meta name="theme-color" content="#020704" />
+    <meta name="theme-color" content="#050313" />
     <meta name="color-scheme" content="dark" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Nihar Dwivedi — Software Engineer" />
     <meta property="og:description" content="Scalable systems, thoughtful tooling, and clean engineering." />
     <meta property="og:url" content="https://nihardwivedi.github.io/" />
-    <meta property="og:image" content="https://nihardwivedi.github.io/og.png" />
+    <meta property="og:image" content="https://nihardwivedi.github.io/og-synthwave.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Nihar Dwivedi — Software Engineer" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://nihardwivedi.github.io/og.png" />
+    <meta name="twitter:image" content="https://nihardwivedi.github.io/og-synthwave.png" />
     <link rel="canonical" href="https://nihardwivedi.github.io/" />
     <title>Nihar Dwivedi — Software Engineer</title>
-    <link rel="stylesheet" href="css/styles.css?v=20260811-1" />
+    <link rel="stylesheet" href="css/styles.css?v=20260811-2" />
   </head>
   <body>
     <a class="skip-link" href="#about">Skip to main content</a>
@@ -158,7 +158,13 @@
           <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
-      <div class="matrix-screen" role="dialog" aria-modal="true" aria-label="Portfolio window closed" hidden><canvas class="matrix-rain" aria-hidden="true"></canvas><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
+      <div class="matrix-screen" role="dialog" aria-modal="true" aria-label="Portfolio window closed" hidden>
+        <div class="matrix-sun" aria-hidden="true"></div>
+        <div class="matrix-horizon-grid" aria-hidden="true"></div>
+        <canvas class="matrix-fractal" aria-hidden="true"></canvas>
+        <canvas class="matrix-rain" aria-hidden="true"></canvas>
+        <button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span><small aria-hidden="true">re-enter</small></button>
+      </div>
     </main>
 
     <script>
@@ -167,53 +173,174 @@
       const terminal = document.querySelector('.terminal');
       const matrixScreen = document.querySelector('.matrix-screen');
       const matrixCanvas = document.querySelector('.matrix-rain');
+      const fractalCanvas = document.querySelector('.matrix-fractal');
       const matrixContext = matrixCanvas.getContext('2d');
+      const fractalContext = fractalCanvas.getContext('2d');
       const controls = [...document.querySelectorAll('[data-window-action]')];
       const reopenButton = matrixScreen.querySelector('.matrix-open');
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       const matrixCharacters = 'アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const matrixPalette = ['#53f7ff', '#53f7ff', '#53f7ff', '#5dffb0', '#5dffb0', '#ff3fb4', '#ff3fb4', '#9670ff', '#ff875f', '#ffe66d'];
+      const matrixDensity = 24;
+      const matrixFrameInterval = 1000 / 24;
+      const maxCanvasPixels = 3000000;
       let matrixColumns = [];
       let matrixWidth = 0;
       let matrixHeight = 0;
+      let matrixPixelRatio = 0;
       let matrixFrame = 0;
+      let matrixResizeTimer = 0;
+      let matrixLastFrame = 0;
       let matrixRunning = false;
       let scrollTicking = false;
       let minimizedScrollPosition = 0;
 
+      const prepareCanvas = (canvas, context, ratio) => {
+        canvas.width = Math.round(matrixWidth * ratio);
+        canvas.height = Math.round(matrixHeight * ratio);
+        canvas.style.width = `${matrixWidth}px`;
+        canvas.style.height = `${matrixHeight}px`;
+        context.setTransform(ratio, 0, 0, ratio, 0, 0);
+      };
+      const drawFractal = () => {
+        if (!fractalContext) return;
+        fractalContext.clearRect(0, 0, matrixWidth, matrixHeight);
+        const size = Math.min(matrixWidth * 0.82, matrixHeight * 1.12);
+        const triangleHeight = size * Math.sqrt(3) / 2;
+        const originX = matrixWidth / 2;
+        const originY = Math.max(matrixHeight * 0.06, (matrixHeight - triangleHeight) * 0.48);
+        const depth = matrixWidth < 640 ? 4 : 5;
+        const gradient = fractalContext.createLinearGradient(originX - size / 2, originY, originX + size / 2, originY + triangleHeight);
+        gradient.addColorStop(0, '#53f7ff');
+        gradient.addColorStop(0.48, '#9670ff');
+        gradient.addColorStop(1, '#ff3fb4');
+
+        const outlineTriangle = (x, y, width) => {
+          const height = width * Math.sqrt(3) / 2;
+          fractalContext.beginPath();
+          fractalContext.moveTo(x, y);
+          fractalContext.lineTo(x - width / 2, y + height);
+          fractalContext.lineTo(x + width / 2, y + height);
+          fractalContext.closePath();
+          fractalContext.stroke();
+        };
+        const sierpinski = (x, y, width, level) => {
+          if (level === 0) {
+            outlineTriangle(x, y, width);
+            return;
+          }
+          const half = width / 2;
+          const halfHeight = half * Math.sqrt(3) / 2;
+          sierpinski(x, y, half, level - 1);
+          sierpinski(x - half / 2, y + halfHeight, half, level - 1);
+          sierpinski(x + half / 2, y + halfHeight, half, level - 1);
+        };
+
+        fractalContext.save();
+        fractalContext.globalCompositeOperation = 'screen';
+        fractalContext.globalAlpha = 0.16;
+        fractalContext.lineWidth = 0.8;
+        fractalContext.strokeStyle = gradient;
+        fractalContext.shadowBlur = 7;
+        fractalContext.shadowColor = '#9670ff';
+        outlineTriangle(originX, originY, size);
+        fractalContext.globalAlpha = 0.095;
+        fractalContext.shadowBlur = 0;
+        sierpinski(originX, originY, size, depth);
+        fractalContext.restore();
+      };
+      const createMatrixColumn = (index) => ({
+        x: index * matrixDensity,
+        y: Math.random() * matrixHeight,
+        interval: 360 + Math.random() * 400,
+        elapsed: Math.random() * 500,
+        color: matrixPalette[Math.floor(Math.random() * matrixPalette.length)]
+      });
+      const getMatrixPixelRatio = (width, height) => Math.min(
+        window.devicePixelRatio || 1,
+        1.5,
+        Math.sqrt(maxCanvasPixels / Math.max(width * height, 1))
+      );
       const resizeMatrix = () => {
-        const density = 18;
-        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        if (!matrixContext || !fractalContext) return;
         matrixWidth = window.innerWidth;
         matrixHeight = window.innerHeight;
-        matrixCanvas.width = matrixWidth * ratio;
-        matrixCanvas.height = matrixHeight * ratio;
-        matrixCanvas.style.width = `${matrixWidth}px`;
-        matrixCanvas.style.height = `${matrixHeight}px`;
-        matrixContext.setTransform(ratio, 0, 0, ratio, 0, 0);
-        matrixColumns = Array.from({ length: Math.ceil(matrixWidth / density) }, () => Math.random() * matrixHeight);
+        matrixPixelRatio = getMatrixPixelRatio(matrixWidth, matrixHeight);
+        prepareCanvas(matrixCanvas, matrixContext, matrixPixelRatio);
+        prepareCanvas(fractalCanvas, fractalContext, matrixPixelRatio);
+        matrixColumns = Array.from({ length: Math.ceil(matrixWidth / matrixDensity) }, (_, index) => createMatrixColumn(index));
+        drawFractal();
       };
-      const drawMatrix = () => {
-        matrixContext.fillStyle = 'rgba(1, 11, 5, 0.16)';
-        matrixContext.fillRect(0, 0, matrixWidth, matrixHeight);
+      const paintGlyph = (column, bright = false) => {
+        const character = matrixCharacters[Math.floor(Math.random() * matrixCharacters.length)];
+        matrixContext.save();
         matrixContext.font = '14px "SFMono-Regular", monospace';
-        matrixColumns.forEach((y, index) => {
-          const character = matrixCharacters[Math.floor(Math.random() * matrixCharacters.length)];
-          const scarlet = index % 7 === 0 || Math.random() > 0.93;
-          matrixContext.fillStyle = scarlet ? '#ff4055' : '#22e879';
-          matrixContext.fillText(character, index * 18, y);
-          if (y > matrixHeight && Math.random() > 0.975) matrixColumns[index] = Math.random() * -matrixHeight;
-          else matrixColumns[index] = y + 14;
+        matrixContext.globalCompositeOperation = 'source-over';
+        matrixContext.globalAlpha = bright ? 0.98 : 0.7;
+        matrixContext.fillStyle = bright ? '#f4f6ff' : column.color;
+        if (bright) {
+          matrixContext.shadowBlur = 9;
+          matrixContext.shadowColor = column.color;
+        }
+        matrixContext.fillText(character, column.x, column.y);
+        matrixContext.restore();
+      };
+      const drawStaticMatrix = () => {
+        if (!matrixContext) return;
+        matrixContext.clearRect(0, 0, matrixWidth, matrixHeight);
+        matrixColumns.forEach((column, index) => {
+          const rows = 3 + (index % 5);
+          for (let row = 0; row < rows; row += 1) {
+            column.y = ((index * 83 + row * matrixDensity * 3) % (matrixHeight + matrixDensity)) - matrixDensity;
+            paintGlyph(column, row === rows - 1);
+          }
         });
+      };
+      const drawMatrix = (timestamp) => {
+        if (!matrixRunning || !matrixContext) return;
+        const elapsed = timestamp - matrixLastFrame;
+        if (elapsed >= matrixFrameInterval) {
+          const stepElapsed = Math.min(elapsed, 120);
+          const fadeAlpha = 1 - Math.pow(0.974, stepElapsed / matrixFrameInterval);
+          matrixContext.save();
+          matrixContext.globalCompositeOperation = 'destination-out';
+          matrixContext.fillStyle = `rgba(0, 0, 0, ${fadeAlpha})`;
+          matrixContext.fillRect(0, 0, matrixWidth, matrixHeight);
+          matrixContext.restore();
+
+          matrixColumns.forEach((column, index) => {
+            column.elapsed += stepElapsed;
+            let advances = 0;
+            while (column.elapsed >= column.interval && advances < 2) {
+              column.elapsed -= column.interval;
+              column.y += matrixDensity;
+              if (column.y > matrixHeight + matrixDensity) {
+                column.y = -Math.random() * matrixHeight * 0.55;
+                column.interval = 360 + Math.random() * 400;
+              }
+              paintGlyph(column, (index + Math.round(column.y / matrixDensity)) % 5 === 0);
+              advances += 1;
+            }
+          });
+          matrixLastFrame = timestamp - (elapsed % matrixFrameInterval);
+        }
         matrixFrame = requestAnimationFrame(drawMatrix);
       };
       const startMatrix = () => {
         resizeMatrix();
-        if (!matrixRunning && !reducedMotion.matches) {
+        if (reducedMotion.matches) {
+          drawStaticMatrix();
+        } else if (!matrixRunning && matrixContext && fractalContext) {
           matrixRunning = true;
-          drawMatrix();
+          matrixLastFrame = performance.now();
+          matrixFrame = requestAnimationFrame(drawMatrix);
         }
       };
-      const stopMatrix = () => { matrixRunning = false; cancelAnimationFrame(matrixFrame); };
+      const stopMatrix = () => {
+        matrixRunning = false;
+        matrixLastFrame = 0;
+        cancelAnimationFrame(matrixFrame);
+      };
       const setActiveRoute = (sectionId = 'about') => routes.forEach((link) => {
         const isActive = link.dataset.route === sectionId;
         link.classList.toggle('is-active', isActive);
@@ -305,7 +432,18 @@
         terminal.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
         terminal.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
       });
-      window.addEventListener('resize', () => { if (matrixRunning) resizeMatrix(); });
+      window.addEventListener('resize', () => {
+        if (matrixScreen.hidden) return;
+        clearTimeout(matrixResizeTimer);
+        matrixResizeTimer = window.setTimeout(() => {
+          const nextWidth = window.innerWidth;
+          const nextHeight = window.innerHeight;
+          const nextRatio = getMatrixPixelRatio(nextWidth, nextHeight);
+          if (nextWidth === matrixWidth && nextHeight === matrixHeight && Math.abs(nextRatio - matrixPixelRatio) < 0.01) return;
+          resizeMatrix();
+          if (reducedMotion.matches) drawStaticMatrix();
+        }, 140);
+      });
       window.addEventListener('scroll', requestScrollUpdate, { passive: true });
       terminal.addEventListener('scroll', requestScrollUpdate, { passive: true });
       window.addEventListener('hashchange', requestScrollUpdate);
@@ -315,11 +453,23 @@
         else if (terminal.classList.contains('is-maximized')) toggleWindow('maximize', controls.find((button) => button.dataset.windowAction === 'maximize'));
       });
       const handleMotionPreference = () => {
-        if (reducedMotion.matches) stopMatrix();
+        if (reducedMotion.matches) {
+          stopMatrix();
+          if (!matrixScreen.hidden) {
+            resizeMatrix();
+            drawStaticMatrix();
+          }
+        }
         else if (!matrixScreen.hidden) startMatrix();
       };
       if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', handleMotionPreference);
       else reducedMotion.addListener(handleMotionPreference);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopMatrix();
+        else if (!matrixScreen.hidden) startMatrix();
+      });
+      window.addEventListener('pagehide', stopMatrix);
+      window.addEventListener('pageshow', () => { if (!matrixScreen.hidden) startMatrix(); });
       updateScrollState();
     </script>
   </body>
