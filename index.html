@@ -11,7 +11,7 @@
     <main class="site-shell" aria-labelledby="site-title">
       <div class="terminal">
         <header class="terminal-bar">
-          <div class="window-controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div>
+          <div class="window-controls" aria-label="Window controls"><button type="button" data-window-action="minimize" aria-label="Minimize window">−</button><button type="button" data-window-action="maximize" aria-label="Maximize window">□</button><button type="button" data-window-action="close" aria-label="Close window">×</button></div>
           <div class="terminal-prompt"><span class="green">user@ndwivedi</span>:<span class="scarlet">~</span>$ <span class="ink">whoami</span></div>
           <nav class="top-nav" aria-label="Main navigation">
             <a href="#about" data-route="about">_about</a>
@@ -48,8 +48,6 @@
                   <span class="placeholder-corner top-right" aria-hidden="true"></span>
                   <span class="placeholder-corner bottom-left" aria-hidden="true"></span>
                   <span class="placeholder-corner bottom-right" aria-hidden="true"></span>
-                  <p>photo placeholder</p>
-                  <small>image coming soon</small>
                 </div>
                 <div class="photo-meta"><span class="scarlet">//</span> profile_image.dat <span class="green">[pending]</span></div>
               </div>
@@ -72,18 +70,18 @@
           <div class="dashboard-grid">
             <section id="skills" class="panel skills-panel" aria-labelledby="skills-title">
               <h2 id="skills-title"><span class="green">&gt; cat</span> skills.json</h2>
-              <div class="skill-group"><h3>languages</h3><div class="skill"><span>Python</span><i><b style="width: 98%"></b></i><em>98%</em></div><div class="skill"><span>Go</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>TypeScript</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>C++</span><i><b style="width: 70%"></b></i><em>70%</em></div><div class="skill"><span>SQL</span><i><b style="width: 85%"></b></i><em>85%</em></div></div>
-              <div class="skill-group"><h3>frameworks &amp; tools</h3><div class="skill"><span>React / Next.js</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>Node.js</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>Docker</span><i><b style="width: 90%"></b></i><em>90%</em></div><div class="skill"><span>Kubernetes</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>Terraform</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>AWS</span><i><b style="width: 80%"></b></i><em>80%</em></div></div>
-              <div class="skill-group"><h3>databases</h3><div class="skill"><span>PostgreSQL</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>MongoDB</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>Redis</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>ClickHouse</span><i><b style="width: 75%"></b></i><em>75%</em></div></div>
-              <div class="panel-note">Always learning. Always shipping.<br /><span class="green">&gt; ▯</span></div>
+              <div class="skill-group"><h3>languages</h3><div class="skill-cloud"><span>Python</span><span>Go</span><span>Java</span><span>JavaScript</span><span>TypeScript</span><span>Rust</span></div></div>
+              <div class="skill-group"><h3>platform &amp; infrastructure</h3><div class="skill-cloud"><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Argo CD</span><span>Vault</span><span>Jenkins</span><span>Shell</span></div></div>
+              <div class="skill-group"><h3>data &amp; frameworks</h3><div class="skill-cloud"><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>Spark</span><span>HDFS</span><span>HBase</span><span>Solr</span><span>Spring Boot</span><span>React</span></div></div>
+              <p class="skills-note"><span class="green">//</span> systems, tooling, and the space between them.</p>
             </section>
 
             <section id="projects" class="panel projects-panel" aria-labelledby="projects-title">
               <div class="panel-heading"><h2 id="projects-title"><span class="green">&gt; ls</span> projects/</h2><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer">[view_all]</a></div>
               <div class="project-list">
-                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">◇</div><div class="project-copy"><h3>TraceLens <span>★ 4.9k</span></h3><p>Open-source observability platform for distributed systems.</p><div class="tags"><span>Go</span><span>React</span><span>ClickHouse</span><span>Grafana</span></div></div><div class="project-preview" aria-hidden="true"><span>trace_id  span_id</span><b>▁▃▆▅▇▂▅</b></div></article>
-                <article class="project"><div class="project-icon green-icon" aria-hidden="true">&gt;_</div><div class="project-copy"><h3>TermHub <span>★ 3.7k</span></h3><p>Beautiful terminal dashboard for devops &amp; SRE teams.</p><div class="tags"><span>Rust</span><span>Tauri</span><span>SQLite</span><span>Charts</span></div></div><div class="project-preview" aria-hidden="true"><span>processes  memory</span><b>▂▅▃▇▅▆▃</b></div></article>
-                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">✣</div><div class="project-copy"><h3>LLM Prompt Studio <span>★ 2.1k</span></h3><p>Prompt management &amp; experimentation tool for AI engineers.</p><div class="tags"><span>Next.js</span><span>Python</span><span>PostgreSQL</span><span>Tailwind</span></div></div><div class="project-preview" aria-hidden="true"><span>prompt run  tokens</span><b>▃▆▅▂▇▅▆</b></div></article>
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">◇</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/neural-hack" target="_blank" rel="noreferrer">neural-hack</a> <span>★ 2</span></h3><p>Solutions to the Neural Hack competition organized at Luminaire, KIIT University.</p><div class="tags"><span>Python</span><span>Machine Learning</span><span>Competition</span></div></div><div class="project-preview" aria-hidden="true"><span>model  accuracy</span><b>▁▃▅▆▇▅▆</b></div></article>
+                <article class="project"><div class="project-icon green-icon" aria-hidden="true">&gt;_</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/image-captioning" target="_blank" rel="noreferrer">image-captioning</a> <span>★ 0</span></h3><p>Deep learning models that generate descriptive captions for images.</p><div class="tags"><span>Python</span><span>Jupyter</span><span>Deep Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>image  caption</span><b>▂▅▆▃▇▅▃</b></div></article>
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">✣</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/mobile-machine-learning" target="_blank" rel="noreferrer">mobile-machine-learning</a> <span>★ 0</span></h3><p>An exploration of modern embedded machine-learning frameworks on mobile platforms.</p><div class="tags"><span>Kotlin</span><span>Android</span><span>Machine Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>device  inference</span><b>▃▆▅▂▇▅▆</b></div></article>
               </div>
             </section>
 
@@ -98,30 +96,35 @@
               </div>
             </section>
 
-            <section class="panel neofetch-panel" aria-labelledby="neofetch-title">
-              <h2 id="neofetch-title"><span class="green">&gt; fastfetch</span></h2>
-              <pre class="fastfetch-output" aria-label="Fastfetch system information">                     ..'          nihar@web
+          <section class="panel neofetch-panel" aria-labelledby="neofetch-title">
+            <h2 id="neofetch-title"><span class="green">&gt; fastfetch</span></h2>
+            <pre class="fastfetch-output" aria-label="Fastfetch system information">                     ..'          zack@Wombats-MacBook-Pro
                  ,xNMM.           ------------------------
-               .OMMMMo            OS: macOS Sequoia 15.3 arm64
+               .OMMMMo            OS: macOS Sequoia 15.3 (24D60) arm64
                lMM"               Host: MacBook Pro (16-inch, 2021)
      .;loddo:.  .olloddol;.       Kernel: Darwin 24.3.0
-   cKMMMMMMMMMMNWMMMMMMMMMM0:     Shell: zsh
- .KMMMMMMMMMMMMMMMMMMMMMMMWd.     Terminal: ghostty 1.3.1
- XMMMMMMMMMMMMMMMMMMMMMMMX.       Terminal Font: JetBrainsMono Nerd Font
-;MMMMMMMMMMMMMMMMMMMMMMMM:        CPU: Apple M1 Pro (8+2) @ 3.23 GHz
-:MMMMMMMMMMMMMMMMMMMMMMMM:        GPU: Apple M1 Pro (16) Integrated
-.MMMMMMMMMMMMMMMMMMMMMMMMX.       Memory: 13.46 GiB / 16.00 GiB
- kMMMMMMMMMMMMMMMMMMMMMMMMWd.     Packages: 133 (brew), 3 (brew-cask)
- 'XMMMMMMMMMMMMMMMMMMMMMMMMMMk    Uptime: 13 days, 3 hours, 25 mins
-  'XMMMMMMMMMMMMMMMMMMMMMMMMK.    WM: Quartz Compositor 1.600.0
-    kMMMMMMMMMMMMMMMMMMMMMMd      Theme: Aqua
-     ;KMMMMMMMWXXWMMMMMMMk.       Locale: en_US.UTF-8
-       "cooc*"    "*coo'"         Mood: building
+   cKMMMMMMMMMMNWMMMMMMMMMM0:     Uptime: 13 days, 3 hours, 25 mins
+ .KMMMMMMMMMMMMMMMMMMMMMMMWd.     Packages: 133 (brew), 3 (brew-cask)
+ XMMMMMMMMMMMMMMMMMMMMMMMX.       Shell: omp
+;MMMMMMMMMMMMMMMMMMMMMMMM:        Display (Color LCD): 3456x2234 @ 2x in 16&quot;, 120 Hz [Built-in]
+:MMMMMMMMMMMMMMMMMMMMMMMM:        WM: Quartz Compositor 1.600.0
+.MMMMMMMMMMMMMMMMMMMMMMMX.       WM Theme: Multicolor (Dark)
+ kMMMMMMMMMMMMMMMMMMMMMMMMWd.     Theme: Aqua
+ 'XMMMMMMMMMMMMMMMMMMMMMMMMMMk    Font: .AppleSystemUIFont [System], Helvetica [User]
+  'XMMMMMMMMMMMMMMMMMMMMMMMMK.    Cursor: Fill - Black, Outline - White (32px)
+    kMMMMMMMMMMMMMMMMMMMMMMd      Terminal: ghostty 1.3.1
+     ;KMMMMMMMWXXWMMMMMMMk.       Terminal Font: JetBrainsMono Nerd Font (13pt)
+       "cooc*"    "*coo'"         CPU: Apple M1 Pro (8+2) @ 3.23 GHz
+                                  GPU: Apple M1 Pro (16) @ 1.30 GHz [Integrated]
+                                  Memory: 13.46 GiB / 16.00 GiB (84%)
+                                  Swap: 2.23 GiB / 3.00 GiB (74%)
+                                  Disk (/): 212.29 GiB / 460.43 GiB (46%) - apfs [Read-only]
+                                  Battery: 64% (4 hours, 30 mins remaining) [Discharging]
+                                  Locale: en_US.UTF-8
 
                                   [ green ] [ scarlet ] [ green ]</pre>
-            </section>
+          </section>
           </div>
-
           <section id="contact" class="panel contact-panel" aria-labelledby="contact-title">
             <h2 id="contact-title"><span class="green">&gt;</span> contact_me.sh</h2>
             <div class="contact-grid"><a href="mailto:ndwivedi@bu.edu"><strong class="contact-icon">✉</strong><span><b>email</b>ndwivedi@bu.edu</span></a><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">◉</strong><span><b>github</b>github.com/nihardwivedi</span></a><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">in</strong><span><b>linkedin</b>linkedin.com/in/nihardwivedi</span></a><a href="mailto:ndwivedi@bu.edu"><strong class="contact-icon">⌖</strong><span><b>location</b>Boston, MA</span></a></div>
@@ -130,12 +133,25 @@
           <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
+      <div class="matrix-screen" hidden><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
     </main>
 
     <script>
       const routes = [...document.querySelectorAll('[data-route]')];
-      routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about')));
-      window.addEventListener('hashchange', () => routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about'))));
+      const terminal = document.querySelector('.terminal');
+      const matrixScreen = document.querySelector('.matrix-screen');
+      const controls = [...document.querySelectorAll('[data-window-action]')];
+      const setActiveRoute = () => routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about')));
+      const toggleWindow = (action) => {
+        if (action === 'minimize') terminal.classList.toggle('is-minimized');
+        if (action === 'maximize') terminal.classList.toggle('is-maximized');
+        if (action === 'close') { terminal.hidden = true; matrixScreen.hidden = false; document.body.classList.add('window-closed'); }
+      };
+      controls.forEach((button) => button.addEventListener('click', () => toggleWindow(button.dataset.windowAction)));
+      matrixScreen.querySelector('.matrix-open').addEventListener('click', () => { terminal.hidden = false; matrixScreen.hidden = true; document.body.classList.remove('window-closed'); });
+      routes.forEach((link) => link.addEventListener('click', () => window.requestAnimationFrame(setActiveRoute)));
+      setActiveRoute();
+      window.addEventListener('hashchange', setActiveRoute);
     </script>
   </body>
 </html>
