@@ -165,7 +165,6 @@ a:focus-visible {
   content: "./";
 }
 
-.nav-cursor,
 .cursor {
   animation: blink 1.05s steps(2, jump-none) infinite;
   background: var(--accent);
@@ -173,12 +172,6 @@ a:focus-visible {
   height: 1.15em;
   vertical-align: -0.2em;
   width: 0.55em;
-}
-
-.nav-cursor {
-  height: 1em;
-  margin-left: -1.25rem;
-  width: 0.45em;
 }
 
 .command-line {
@@ -269,6 +262,17 @@ h2 {
   background: rgba(14, 3, 5, 0.45);
   border: 1px solid var(--faint);
   padding: 1.25rem;
+  transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+@media (hover: hover) {
+  .terminal-block:hover,
+  .terminal-block:focus-within {
+    background: rgba(255, 59, 48, 0.08);
+    border-color: var(--accent);
+    box-shadow: 0 0 1.25rem rgba(255, 59, 48, 0.14), inset 0 0 1rem rgba(255, 59, 48, 0.05);
+    transform: translateY(-0.2rem);
+  }
 }
 
 .terminal-block h2 {
@@ -406,9 +410,6 @@ h2 {
     gap: 1.25rem;
   }
 
-  .nav-cursor {
-    margin-left: -0.75rem;
-  }
 
   .command-line {
     margin: 2rem 0;
