@@ -136,23 +136,61 @@
           <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
-      <div class="matrix-screen" hidden><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
+      <div class="matrix-screen" hidden><canvas class="matrix-rain" aria-hidden="true"></canvas><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
     </main>
 
     <script>
       const routes = [...document.querySelectorAll('[data-route]')];
       const terminal = document.querySelector('.terminal');
       const matrixScreen = document.querySelector('.matrix-screen');
+      const matrixCanvas = document.querySelector('.matrix-rain');
+      const matrixContext = matrixCanvas.getContext('2d');
       const controls = [...document.querySelectorAll('[data-window-action]')];
+      const matrixCharacters = 'アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      let matrixColumns = [];
+      let matrixWidth = 0;
+      let matrixHeight = 0;
+      let matrixFrame = 0;
+      let matrixRunning = false;
+
+      const resizeMatrix = () => {
+        const density = 18;
+        const ratio = Math.min(window.devicePixelRatio || 1, 2);
+        matrixWidth = window.innerWidth;
+        matrixHeight = window.innerHeight;
+        matrixCanvas.width = matrixWidth * ratio;
+        matrixCanvas.height = matrixHeight * ratio;
+        matrixCanvas.style.width = `${matrixWidth}px`;
+        matrixCanvas.style.height = `${matrixHeight}px`;
+        matrixContext.setTransform(ratio, 0, 0, ratio, 0, 0);
+        matrixColumns = Array.from({ length: Math.ceil(matrixWidth / density) }, () => Math.random() * matrixHeight);
+      };
+      const drawMatrix = () => {
+        matrixContext.fillStyle = 'rgba(1, 11, 5, 0.16)';
+        matrixContext.fillRect(0, 0, matrixWidth, matrixHeight);
+        matrixContext.font = '14px "SFMono-Regular", monospace';
+        matrixColumns.forEach((y, index) => {
+          const character = matrixCharacters[Math.floor(Math.random() * matrixCharacters.length)];
+          const scarlet = index % 7 === 0 || Math.random() > 0.93;
+          matrixContext.fillStyle = scarlet ? '#ff4055' : '#22e879';
+          matrixContext.fillText(character, index * 18, y);
+          if (y > matrixHeight && Math.random() > 0.975) matrixColumns[index] = Math.random() * -matrixHeight;
+          else matrixColumns[index] = y + 14;
+        });
+        matrixFrame = requestAnimationFrame(drawMatrix);
+      };
+      const startMatrix = () => { if (!matrixRunning) { matrixRunning = true; resizeMatrix(); drawMatrix(); } };
+      const stopMatrix = () => { matrixRunning = false; cancelAnimationFrame(matrixFrame); };
       const setActiveRoute = () => routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about')));
       const toggleWindow = (action) => {
         if (action === 'minimize') terminal.classList.toggle('is-minimized');
         if (action === 'maximize') terminal.classList.toggle('is-maximized');
-        if (action === 'close') { terminal.hidden = true; matrixScreen.hidden = false; document.body.classList.add('window-closed'); }
+        if (action === 'close') { terminal.hidden = true; matrixScreen.hidden = false; document.body.classList.add('window-closed'); startMatrix(); }
       };
       controls.forEach((button) => button.addEventListener('click', () => toggleWindow(button.dataset.windowAction)));
-      matrixScreen.querySelector('.matrix-open').addEventListener('click', () => { terminal.hidden = false; matrixScreen.hidden = true; document.body.classList.remove('window-closed'); });
+      matrixScreen.querySelector('.matrix-open').addEventListener('click', () => { stopMatrix(); terminal.hidden = false; matrixScreen.hidden = true; document.body.classList.remove('window-closed'); });
       routes.forEach((link) => link.addEventListener('click', () => window.requestAnimationFrame(setActiveRoute)));
+      window.addEventListener('resize', () => { if (matrixRunning) resizeMatrix(); });
       setActiveRoute();
       window.addEventListener('hashchange', setActiveRoute);
     </script>
