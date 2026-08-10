@@ -152,6 +152,22 @@ a:hover {
   transform-origin: left;
 }
 
+.cursor-trail {
+  contain: strict;
+  height: 100%;
+  inset: 0;
+  opacity: 0.86;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+
+.matrix-screen > .cursor-trail {
+  opacity: 0.66;
+  z-index: 4;
+}
+
 .site-shell {
   min-height: 100vh;
   padding: clamp(0.75rem, 2vw, 1.75rem);
@@ -2918,9 +2934,17 @@ a:hover {
   .cursor-block {
     animation: none;
   }
+
+  .cursor-trail {
+    display: none;
+  }
 }
 
 @media (forced-colors: active) {
+  .cursor-trail {
+    display: none;
+  }
+
   .matrix-brand h2 span {
     background: none;
     color: CanvasText;
