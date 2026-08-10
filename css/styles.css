@@ -62,10 +62,13 @@ a:focus-visible { outline: 1px solid var(--scarlet); outline-offset: 0.25rem; }
 .role { color: var(--purple); font-size: clamp(0.75rem, 1.15vw, 1rem); margin: 0 0 1.45rem; }
 .intro { color: var(--text); line-height: 1.65; margin: 0; max-width: 32rem; }
 .passion-command { margin-top: clamp(2rem, 4vw, 3rem); }
-.passions { display: grid; gap: 0.75rem; grid-template-columns: repeat(4, minmax(0, 1fr)); }
-.passion { align-items: center; border: 1px solid var(--border); display: flex; flex-direction: column; gap: 0.55rem; justify-content: center; min-height: 5.5rem; padding: 0.55rem 0.35rem; text-align: center; transition: background 160ms ease, border-color 160ms ease, transform 160ms ease; }
+.passions { display: grid; gap: 0.75rem; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.passion { align-items: center; border: 1px solid var(--border); color: var(--green); display: flex; flex-direction: column; gap: 0.55rem; justify-content: center; min-height: 5.5rem; padding: 0.55rem 0.35rem; text-align: center; transition: background 160ms ease, border-color 160ms ease, transform 160ms ease; }
 .passion:hover { background: rgba(34, 232, 121, 0.08); border-color: var(--scarlet); transform: translateY(-0.15rem); }
 .passion strong { color: var(--scarlet); font-size: 1.9rem; font-weight: 400; line-height: 1; }
+.passion-logo { font-family: Arial, sans-serif; font-weight: 700; }
+.hacker-news-logo { color: #f2a13b !important; font-size: 1.85rem !important; }
+.anime-logo { color: var(--scarlet) !important; font-size: 1.65rem !important; }
 .passion:nth-child(even) strong { color: var(--green); }
 .passion span { color: var(--muted); font-size: 0.68rem; text-transform: uppercase; }
 .terminal-cursor { color: var(--green); margin: 1.1rem 0 0; }
