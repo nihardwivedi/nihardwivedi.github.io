@@ -3,138 +3,139 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Nihar Dwivedi — software engineer focused on reliable systems and infrastructure." />
+    <meta name="description" content="Nihar Dwivedi — software engineer, problem solver, and builder." />
     <title>nihar@web:~</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <main class="site-shell" aria-labelledby="site-title">
-      <div class="terminal" role="application" aria-label="Nihar Dwivedi personal website">
+      <div class="terminal">
         <header class="terminal-bar">
-          <div class="terminal-dots" aria-hidden="true">
-            <span></span><span></span><span></span>
-          </div>
-          <p class="terminal-title">nihar@web:~</p>
-          <p class="terminal-status">online</p>
+          <div class="window-controls" aria-hidden="true"><span>−</span><span>□</span><span>×</span></div>
+          <div class="terminal-prompt"><span class="green">user@ndwivedi</span>:<span class="scarlet">~</span>$ <span class="ink">whoami</span></div>
+          <nav class="top-nav" aria-label="Main navigation">
+            <a href="#about" data-route="about">_about</a>
+            <a href="#skills">_skills</a>
+            <a href="#projects">_projects</a>
+            <a href="#experience">_experience</a>
+            <a href="#contact">_contact</a>
+          </nav>
         </header>
 
         <div class="terminal-body">
-          <nav class="site-nav" aria-label="Main navigation">
-            <a class="brand" href="#about" aria-label="Go to home">./nihar</a>
-            <div class="nav-links">
-              <a href="#about" data-route="about">about</a>
-              <a href="#blog" data-route="blog">blog</a>
-            </div>
-          </nav>
+          <section id="about" class="hero route-panel" data-panel="about" aria-labelledby="site-title">
+            <div class="hero-main">
+              <div class="hero-copy">
+                <p class="command green">&gt; cat /about.md</p>
+                <h1 id="site-title">Hi, I’m<br /><span>Nihar Dwivedi</span></h1>
+                <p class="role">// Software Engineer · Problem Solver · Builder</p>
+                <p class="intro">I build scalable systems, craft clean code, and turn complex problems into elegant solutions. Currently exploring the intersection of distributed systems, developer experience, and AI.</p>
+                <p class="command green passion-command">&gt; ls passions/</p>
+                <div class="passions" aria-label="Interests">
+                  <div class="passion"><strong aria-hidden="true">◇</strong><span>system design</span></div>
+                  <div class="passion"><strong aria-hidden="true">&gt;_</strong><span>open source</span></div>
+                  <div class="passion"><strong aria-hidden="true">✣</strong><span>ai/ml</span></div>
+                  <div class="passion"><strong aria-hidden="true">△</strong><span>music &amp; hikes</span></div>
+                </div>
+                <p class="terminal-cursor" aria-hidden="true">&gt; <span></span></p>
+              </div>
 
-          <div class="command-line" aria-hidden="true">
-            <span class="prompt">$</span> <span id="command-text">cat about.txt</span><span class="cursor"></span>
+              <div class="photo-column">
+                <div class="photo-placeholder" role="img" aria-label="Photo placeholder">
+                  <div class="placeholder-grid" aria-hidden="true"></div>
+                  <div class="placeholder-mark" aria-hidden="true">N</div>
+                  <span class="placeholder-corner top-left" aria-hidden="true"></span>
+                  <span class="placeholder-corner top-right" aria-hidden="true"></span>
+                  <span class="placeholder-corner bottom-left" aria-hidden="true"></span>
+                  <span class="placeholder-corner bottom-right" aria-hidden="true"></span>
+                  <p>photo placeholder</p>
+                  <small>image coming soon</small>
+                </div>
+                <div class="photo-meta"><span class="scarlet">//</span> profile_image.dat <span class="green">[pending]</span></div>
+              </div>
+
+              <aside class="system-info">
+                <p class="command green">&gt; system_info</p>
+                <dl>
+                  <div><dt>name:</dt><dd>Nihar Dwivedi</dd></div>
+                  <div><dt>role:</dt><dd>Software Engineer</dd></div>
+                  <div><dt>location:</dt><dd>Boston, MA</dd></div>
+                  <div><dt>experience:</dt><dd>6+ years</dd></div>
+                  <div><dt>status:</dt><dd>Building cool stuff</dd></div>
+                  <div><dt>coffee:</dt><dd aria-label="five coffee cups">☕ ☕ ☕ ☕ ☕</dd></div>
+                </dl>
+                <div class="uptime"><p class="command green">&gt; uptime</p><strong>8113</strong><span>hours of code</span></div>
+              </aside>
+            </div>
+          </section>
+
+          <div class="dashboard-grid">
+            <section id="skills" class="panel skills-panel" aria-labelledby="skills-title">
+              <h2 id="skills-title"><span class="green">&gt; cat</span> skills.json</h2>
+              <div class="skill-group"><h3>languages</h3><div class="skill"><span>Python</span><i><b style="width: 98%"></b></i><em>98%</em></div><div class="skill"><span>Go</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>TypeScript</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>C++</span><i><b style="width: 70%"></b></i><em>70%</em></div><div class="skill"><span>SQL</span><i><b style="width: 85%"></b></i><em>85%</em></div></div>
+              <div class="skill-group"><h3>frameworks &amp; tools</h3><div class="skill"><span>React / Next.js</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>Node.js</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>Docker</span><i><b style="width: 90%"></b></i><em>90%</em></div><div class="skill"><span>Kubernetes</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>Terraform</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>AWS</span><i><b style="width: 80%"></b></i><em>80%</em></div></div>
+              <div class="skill-group"><h3>databases</h3><div class="skill"><span>PostgreSQL</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>MongoDB</span><i><b style="width: 80%"></b></i><em>80%</em></div><div class="skill"><span>Redis</span><i><b style="width: 85%"></b></i><em>85%</em></div><div class="skill"><span>ClickHouse</span><i><b style="width: 75%"></b></i><em>75%</em></div></div>
+              <div class="panel-note">Always learning. Always shipping.<br /><span class="green">&gt; ▯</span></div>
+            </section>
+
+            <section id="projects" class="panel projects-panel" aria-labelledby="projects-title">
+              <div class="panel-heading"><h2 id="projects-title"><span class="green">&gt; ls</span> projects/</h2><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer">[view_all]</a></div>
+              <div class="project-list">
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">◇</div><div class="project-copy"><h3>TraceLens <span>★ 4.9k</span></h3><p>Open-source observability platform for distributed systems.</p><div class="tags"><span>Go</span><span>React</span><span>ClickHouse</span><span>Grafana</span></div></div><div class="project-preview" aria-hidden="true"><span>trace_id  span_id</span><b>▁▃▆▅▇▂▅</b></div></article>
+                <article class="project"><div class="project-icon green-icon" aria-hidden="true">&gt;_</div><div class="project-copy"><h3>TermHub <span>★ 3.7k</span></h3><p>Beautiful terminal dashboard for devops &amp; SRE teams.</p><div class="tags"><span>Rust</span><span>Tauri</span><span>SQLite</span><span>Charts</span></div></div><div class="project-preview" aria-hidden="true"><span>processes  memory</span><b>▂▅▃▇▅▆▃</b></div></article>
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">✣</div><div class="project-copy"><h3>LLM Prompt Studio <span>★ 2.1k</span></h3><p>Prompt management &amp; experimentation tool for AI engineers.</p><div class="tags"><span>Next.js</span><span>Python</span><span>PostgreSQL</span><span>Tailwind</span></div></div><div class="project-preview" aria-hidden="true"><span>prompt run  tokens</span><b>▃▆▅▂▇▅▆</b></div></article>
+              </div>
+            </section>
+
+            <section id="experience" class="panel experience-panel" aria-labelledby="experience-title">
+              <h2 id="experience-title"><span class="green">&gt; cat</span> experience.log</h2>
+              <div class="timeline">
+                <article class="timeline-item"><time>Mar 2023 — Mar 2024 · Dallas, TX</time><h3>Senior Site Reliability Engineer <span>@ Securonix, Inc.</span></h3><p>Orchestrated AWS and Redis scalability improvements, unlocked new instance types, and reduced annual infrastructure costs through capacity and Spark optimization.</p><small>Tech: AWS, Redis, Spark, Kafka, HDFS, HBase, Solr, MySQL</small></article>
+                <article class="timeline-item"><time>Sept 2022 — Mar 2023 · Dallas, TX</time><h3>Software Engineer <span>@ Securonix, Inc.</span></h3><p>Delivered Java enhancements and designed a Spring microservice API with UI components, separating resource-intensive ingestion for greater uptime and capacity.</p><small>Tech: Java, Spring, UI engineering, build systems</small></article>
+                <article class="timeline-item"><time>June 2021 — Sept 2022 · Dallas, TX</time><h3>Cloud Security Engineer <span>@ Securonix, Inc.</span></h3><p>Managed a cloud SIEM data-ingestion pipeline, led on-call incident response, and partnered with Product and Engineering to improve system stability.</p><small>Tech: AWS, Redis, Kafka, Spark, Kubernetes</small></article>
+                <article class="timeline-item"><time>Jan 2020 — May 2020 · Boston, MA</time><h3>Student Developer <span>@ Red Hat, Inc.</span></h3><p>Built an LSTM metric-alerting model and deployed a Grafana and Prometheus monitoring application on OpenShift; the reviewed work landed in the main repository.</p><small>Tech: Python, OpenShift, Grafana, Prometheus, JupyterHub</small></article>
+                <article class="timeline-item"><time>Jan 2019 — May 2019 · Hyderabad, India</time><h3>Software Engineer Intern <span>@ Deloitte</span></h3><p>Developed PowerShell, SQL, JavaScript, and C# features for a web-based audit tool, expanding its capabilities and improving documentation and usability.</p><small>Tech: PowerShell, SQL, JavaScript, C#</small></article>
+              </div>
+            </section>
+
+            <section class="panel neofetch-panel" aria-labelledby="neofetch-title">
+              <h2 id="neofetch-title"><span class="green">&gt; fastfetch</span></h2>
+              <pre class="fastfetch-output" aria-label="Fastfetch system information">                     ..'          nihar@web
+                 ,xNMM.           ------------------------
+               .OMMMMo            OS: macOS Sequoia 15.3 arm64
+               lMM"               Host: MacBook Pro (16-inch, 2021)
+     .;loddo:.  .olloddol;.       Kernel: Darwin 24.3.0
+   cKMMMMMMMMMMNWMMMMMMMMMM0:     Shell: zsh
+ .KMMMMMMMMMMMMMMMMMMMMMMMWd.     Terminal: ghostty 1.3.1
+ XMMMMMMMMMMMMMMMMMMMMMMMX.       Terminal Font: JetBrainsMono Nerd Font
+;MMMMMMMMMMMMMMMMMMMMMMMM:        CPU: Apple M1 Pro (8+2) @ 3.23 GHz
+:MMMMMMMMMMMMMMMMMMMMMMMM:        GPU: Apple M1 Pro (16) Integrated
+.MMMMMMMMMMMMMMMMMMMMMMMMX.       Memory: 13.46 GiB / 16.00 GiB
+ kMMMMMMMMMMMMMMMMMMMMMMMMWd.     Packages: 133 (brew), 3 (brew-cask)
+ 'XMMMMMMMMMMMMMMMMMMMMMMMMMMk    Uptime: 13 days, 3 hours, 25 mins
+  'XMMMMMMMMMMMMMMMMMMMMMMMMK.    WM: Quartz Compositor 1.600.0
+    kMMMMMMMMMMMMMMMMMMMMMMd      Theme: Aqua
+     ;KMMMMMMMWXXWMMMMMMMk.       Locale: en_US.UTF-8
+       "cooc*"    "*coo'"         Mood: building
+
+                                  [ green ] [ scarlet ] [ green ]</pre>
+            </section>
           </div>
 
-          <section id="about" class="route-panel" data-panel="about" aria-labelledby="site-title" tabindex="-1">
-            <p class="eyebrow">Software engineer · builder · tinkerer</p>
-            <h1 id="site-title">Nihar Dwivedi</h1>
-            <p class="lede">I build reliable systems and the tools that help people ship them.</p>
-
-            <div class="about-copy">
-              <p>
-                I'm Nihar, a software engineer focused on reliable systems,
-                infrastructure, and product engineering. I like turning ambiguous
-                problems into simple, durable software that can grow with the people
-                who use it.
-              </p>
-              <p>
-                Currently I'm a Senior Systems SDE at Sifive in the build systems group.
-                My work has spanned site reliability, cloud infrastructure, operations,
-                security, and full-stack development. I'm especially interested in
-                distributed systems, developer platforms, and pragmatic engineering teams.
-              </p>
-              <p>
-                Earlier in my career, I was a graduate student in Computer Engineering
-                at Boston University and an engineering intern at Deloitte, working on
-                PowerShell and MySQL scripts for database and operating-system audits.
-              </p>
-              <p>
-                Outside work, I read science fiction, play guitar, and keep an eye out
-                for the next interesting system to build.
-              </p>
-            </div>
-
-            <div class="about-grid">
-              <section class="terminal-block" aria-labelledby="now-title">
-                <h2 id="now-title"><span class="prompt">$</span> now</h2>
-                <p>Exploring distributed systems, developer platforms, and software that stays useful under pressure.</p>
-              </section>
-              <section class="terminal-block" aria-labelledby="links-title">
-                <h2 id="links-title"><span class="prompt">$</span> connect</h2>
-                <ul class="social-links" aria-label="Social and contact links">
-                  <li><a href="mailto:ndwivedi@bu.edu"><span aria-hidden="true">→</span> email</a></li>
-                  <li><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> github</a></li>
-                  <li><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> linkedin</a></li>
-                  <li><a href="https://www.twitter.com/2steps2doors" target="_blank" rel="noreferrer"><span aria-hidden="true">→</span> twitter</a></li>
-                  <li><a href="nihar_dwivedi_resume.pdf"><span aria-hidden="true">→</span> resume</a></li>
-                </ul>
-              </section>
-            </div>
+          <section id="contact" class="panel contact-panel" aria-labelledby="contact-title">
+            <h2 id="contact-title"><span class="green">&gt;</span> contact_me.sh</h2>
+            <div class="contact-grid"><a href="mailto:ndwivedi@bu.edu"><strong class="contact-icon">✉</strong><span><b>email</b>ndwivedi@bu.edu</span></a><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">◉</strong><span><b>github</b>github.com/nihardwivedi</span></a><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">in</strong><span><b>linkedin</b>linkedin.com/in/nihardwivedi</span></a><a href="mailto:ndwivedi@bu.edu"><strong class="contact-icon">⌖</strong><span><b>location</b>Boston, MA</span></a></div>
           </section>
 
-          <section id="blog" class="route-panel" data-panel="blog" aria-labelledby="blog-title" tabindex="-1" hidden>
-            <p class="eyebrow">/var/log/thoughts</p>
-            <h1 id="blog-title">Blog</h1>
-            <p class="lede">Notes on software, systems, and the things I learn while building.</p>
-
-            <article class="post-card">
-              <div class="post-meta"><span>2020</span><span aria-hidden="true">·</span><span>personal</span></div>
-              <h2><a href="#blog">Stopping Procrastination</a></h2>
-              <p>
-                A recovered note about building this site for the third time, learning
-                by doing, and making the first step small enough to take.
-              </p>
-              <span class="post-command">$ read stopping-procrastination.md</span>
-            </article>
-
-            <p class="blog-footer"><span class="prompt">$</span> more posts are on the way<span class="cursor" aria-hidden="true"></span></p>
-          </section>
-
-          <footer class="terminal-footer">
-            <span>© Nihar Dwivedi</span>
-            <span class="footer-separator" aria-hidden="true">·</span>
-            <span>built with plain html + css</span>
-          </footer>
+          <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
     </main>
 
     <script>
-      const panels = [...document.querySelectorAll('[data-panel]')];
       const routes = [...document.querySelectorAll('[data-route]')];
-      const commandText = document.getElementById('command-text');
-
-      function showRoute(route, updateHash = true) {
-        const activeRoute = route === 'blog' ? 'blog' : 'about';
-        panels.forEach((panel) => {
-          const active = panel.dataset.panel === activeRoute;
-          panel.hidden = !active;
-          panel.classList.toggle('is-active', active);
-        });
-        routes.forEach((link) => {
-          const active = link.dataset.route === activeRoute;
-          link.classList.toggle('is-active', active);
-          link.setAttribute('aria-current', active ? 'page' : 'false');
-        });
-        commandText.textContent = activeRoute === 'blog' ? 'ls /var/log/thoughts' : 'cat about.txt';
-        if (updateHash && window.location.hash !== `#${activeRoute}`) {
-          history.pushState(null, '', `#${activeRoute}`);
-        }
-      }
-
-      function routeFromHash() {
-        return window.location.hash.slice(1).toLowerCase();
-      }
-
-      showRoute(routeFromHash(), false);
-      window.addEventListener('hashchange', () => showRoute(routeFromHash(), false));
-      window.addEventListener('popstate', () => showRoute(routeFromHash(), false));
+      routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about')));
+      window.addEventListener('hashchange', () => routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about'))));
     </script>
   </body>
 </html>
