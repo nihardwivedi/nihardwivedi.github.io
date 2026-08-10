@@ -1,15 +1,15 @@
 :root {
   color-scheme: dark;
-  --background: #030604;
-  --surface: #071009;
-  --surface-raised: #0b170d;
-  --foreground: #b7ffab;
-  --accent: #76ff67;
-  --accent-bright: #b7ffab;
-  --muted: #6ba563;
-  --faint: #355d38;
-  --border: #1b5421;
-  --shadow: rgba(52, 255, 66, 0.12);
+  --background: #0b0703;
+  --surface: #160d05;
+  --surface-raised: #211307;
+  --foreground: #ffd08a;
+  --accent: #ff9d2e;
+  --accent-bright: #ffe0a8;
+  --muted: #b87832;
+  --faint: #633a18;
+  --border: #a85a1b;
+  --shadow: rgba(255, 138, 30, 0.14);
 }
 
 * {
@@ -23,7 +23,7 @@ html {
 
 body {
   background:
-    radial-gradient(circle at 50% -10%, rgba(40, 126, 45, 0.14), transparent 35rem),
+    radial-gradient(circle at 50% -10%, rgba(170, 80, 10, 0.16), transparent 35rem),
     var(--background);
   color: var(--foreground);
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
@@ -62,7 +62,7 @@ a:focus-visible {
 
 .terminal {
   border: 1px solid var(--border);
-  box-shadow: 0 0 0 1px rgba(118, 255, 103, 0.03), 0 1.5rem 5rem var(--shadow);
+  box-shadow: 0 0 0 1px rgba(255, 157, 46, 0.04), 0 1.5rem 5rem var(--shadow);
   max-width: 70rem;
   overflow: hidden;
   width: 100%;
@@ -91,15 +91,15 @@ a:focus-visible {
 }
 
 .terminal-dots span:first-child {
-  background: #6f362d;
+  background: #7b3523;
 }
 
 .terminal-dots span:nth-child(2) {
-  background: #77672b;
+  background: #8c5b1c;
 }
 
 .terminal-dots span:last-child {
-  background: #34773a;
+  background: #b66a1e;
 }
 
 .terminal-title,
@@ -120,7 +120,7 @@ a:focus-visible {
 }
 
 .terminal-body {
-  background: rgba(7, 16, 9, 0.9);
+  background: rgba(22, 13, 5, 0.92);
   padding: clamp(1.25rem, 4vw, 3rem);
 }
 
@@ -266,7 +266,7 @@ h2 {
 }
 
 .terminal-block {
-  background: rgba(3, 6, 4, 0.4);
+  background: rgba(11, 7, 3, 0.4);
   border: 1px solid var(--faint);
   padding: 1.25rem;
 }
@@ -301,7 +301,7 @@ h2 {
 }
 
 .post-card {
-  background: rgba(3, 6, 4, 0.4);
+  background: rgba(11, 7, 3, 0.4);
   border: 1px solid var(--border);
   margin-top: 2.5rem;
   max-width: 52rem;
