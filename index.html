@@ -18,7 +18,7 @@
     <meta name="twitter:image" content="https://nihardwivedi.github.io/og-synthwave.png" />
     <link rel="canonical" href="https://nihardwivedi.github.io/" />
     <title>Nihar Dwivedi — Software Engineer</title>
-    <link rel="stylesheet" href="css/styles.css?v=20260811-2" />
+    <link rel="stylesheet" href="css/styles.css?v=20260811-3" />
   </head>
   <body>
     <a class="skip-link" href="#about">Skip to main content</a>
@@ -158,12 +158,18 @@
           <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
-      <div class="matrix-screen" role="dialog" aria-modal="true" aria-label="Portfolio window closed" hidden>
-        <div class="matrix-sun" aria-hidden="true"></div>
+      <div class="matrix-screen" role="dialog" aria-modal="true" aria-labelledby="matrix-brand-title" aria-describedby="matrix-brand-role matrix-brand-tagline" hidden>
+        <div class="matrix-circuit matrix-circuit-left" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="matrix-circuit matrix-circuit-right" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
         <div class="matrix-horizon-grid" aria-hidden="true"></div>
         <canvas class="matrix-fractal" aria-hidden="true"></canvas>
         <canvas class="matrix-rain" aria-hidden="true"></canvas>
-        <button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span><small aria-hidden="true">re-enter</small></button>
+        <div class="matrix-brand">
+          <h2 id="matrix-brand-title"><span data-text="NIHAR DWIVEDI">Nihar Dwivedi</span></h2>
+          <p id="matrix-brand-role" class="matrix-brand-role"><i aria-hidden="true"></i>Software Engineer<i aria-hidden="true"></i></p>
+          <p id="matrix-brand-tagline" class="matrix-brand-tagline">Scalable Systems <b aria-hidden="true">·</b> Developer Experience <b aria-hidden="true">·</b> AI</p>
+        </div>
+        <button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span><small>re-enter portfolio</small></button>
       </div>
     </main>
 
@@ -179,10 +185,14 @@
       const controls = [...document.querySelectorAll('[data-window-action]')];
       const reopenButton = matrixScreen.querySelector('.matrix-open');
       const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-      const matrixCharacters = 'アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-      const matrixPalette = ['#53f7ff', '#53f7ff', '#53f7ff', '#5dffb0', '#5dffb0', '#ff3fb4', '#ff3fb4', '#9670ff', '#ff875f', '#ffe66d'];
-      const matrixDensity = 24;
-      const matrixFrameInterval = 1000 / 24;
+      const matrixCharacters = '0010110100101101001011010010110100101101アカサタナハマヤラワABCDEFGHIJKLMNOPQRSTUVWXYZ';
+      const matrixPalette = [
+        '#28dfff', '#28dfff', '#28dfff', '#28dfff', '#28dfff', '#28dfff', '#28dfff', '#28dfff', '#28dfff',
+        '#008cd9', '#008cd9', '#008cd9', '#008cd9', '#008cd9', '#008cd9',
+        '#6928b8', '#6928b8', '#6928b8', '#ff3eae', '#ffc66f'
+      ];
+      const matrixDensity = 18;
+      const matrixFrameInterval = 1000 / 20;
       const maxCanvasPixels = 3000000;
       let matrixColumns = [];
       let matrixWidth = 0;
@@ -205,18 +215,18 @@
       const drawFractal = () => {
         if (!fractalContext) return;
         fractalContext.clearRect(0, 0, matrixWidth, matrixHeight);
-        const size = Math.min(matrixWidth * 0.82, matrixHeight * 1.12);
+        const size = Math.min(matrixWidth * (matrixWidth < 640 ? 0.86 : 0.43), matrixHeight * 1.03);
         const triangleHeight = size * Math.sqrt(3) / 2;
         const originX = matrixWidth / 2;
-        const originY = Math.max(matrixHeight * 0.06, (matrixHeight - triangleHeight) * 0.48);
-        const depth = matrixWidth < 640 ? 4 : 5;
+        const originY = matrixHeight * 0.055;
         const gradient = fractalContext.createLinearGradient(originX - size / 2, originY, originX + size / 2, originY + triangleHeight);
-        gradient.addColorStop(0, '#53f7ff');
-        gradient.addColorStop(0.48, '#9670ff');
-        gradient.addColorStop(1, '#ff3fb4');
+        gradient.addColorStop(0, '#28dfff');
+        gradient.addColorStop(0.5, '#6928b8');
+        gradient.addColorStop(1, '#ff3eae');
 
-        const outlineTriangle = (x, y, width) => {
+        const outlineTriangle = (x, y, width, alpha) => {
           const height = width * Math.sqrt(3) / 2;
+          fractalContext.globalAlpha = alpha;
           fractalContext.beginPath();
           fractalContext.moveTo(x, y);
           fractalContext.lineTo(x - width / 2, y + height);
@@ -224,35 +234,24 @@
           fractalContext.closePath();
           fractalContext.stroke();
         };
-        const sierpinski = (x, y, width, level) => {
-          if (level === 0) {
-            outlineTriangle(x, y, width);
-            return;
-          }
-          const half = width / 2;
-          const halfHeight = half * Math.sqrt(3) / 2;
-          sierpinski(x, y, half, level - 1);
-          sierpinski(x - half / 2, y + halfHeight, half, level - 1);
-          sierpinski(x + half / 2, y + halfHeight, half, level - 1);
-        };
 
         fractalContext.save();
         fractalContext.globalCompositeOperation = 'screen';
-        fractalContext.globalAlpha = 0.16;
         fractalContext.lineWidth = 0.8;
         fractalContext.strokeStyle = gradient;
-        fractalContext.shadowBlur = 7;
-        fractalContext.shadowColor = '#9670ff';
-        outlineTriangle(originX, originY, size);
-        fractalContext.globalAlpha = 0.095;
-        fractalContext.shadowBlur = 0;
-        sierpinski(originX, originY, size, depth);
+        fractalContext.shadowBlur = 4;
+        fractalContext.shadowColor = '#6928b8';
+        [1, 0.82, 0.64, 0.46, 0.28, 0.14].forEach((scale, index) => {
+          const width = size * scale;
+          const nestedY = originY + (size - width) * 0.31;
+          outlineTriangle(originX, nestedY, width, index === 0 ? 0.17 : 0.095 + index * 0.008);
+        });
         fractalContext.restore();
       };
       const createMatrixColumn = (index) => ({
         x: index * matrixDensity,
         y: Math.random() * matrixHeight,
-        interval: 360 + Math.random() * 400,
+        interval: 480 + Math.random() * 420,
         elapsed: Math.random() * 500,
         color: matrixPalette[Math.floor(Math.random() * matrixPalette.length)]
       });
@@ -274,12 +273,12 @@
       const paintGlyph = (column, bright = false) => {
         const character = matrixCharacters[Math.floor(Math.random() * matrixCharacters.length)];
         matrixContext.save();
-        matrixContext.font = '14px "SFMono-Regular", monospace';
+        matrixContext.font = '11px "SFMono-Regular", monospace';
         matrixContext.globalCompositeOperation = 'source-over';
-        matrixContext.globalAlpha = bright ? 0.98 : 0.7;
+        matrixContext.globalAlpha = bright ? 0.82 : 0.46;
         matrixContext.fillStyle = bright ? '#f4f6ff' : column.color;
         if (bright) {
-          matrixContext.shadowBlur = 9;
+          matrixContext.shadowBlur = 5;
           matrixContext.shadowColor = column.color;
         }
         matrixContext.fillText(character, column.x, column.y);
@@ -316,7 +315,7 @@
               column.y += matrixDensity;
               if (column.y > matrixHeight + matrixDensity) {
                 column.y = -Math.random() * matrixHeight * 0.55;
-                column.interval = 360 + Math.random() * 400;
+                column.interval = 480 + Math.random() * 420;
               }
               paintGlyph(column, (index + Math.round(column.y / matrixDensity)) % 5 === 0);
               advances += 1;
@@ -328,9 +327,8 @@
       };
       const startMatrix = () => {
         resizeMatrix();
-        if (reducedMotion.matches) {
-          drawStaticMatrix();
-        } else if (!matrixRunning && matrixContext && fractalContext) {
+        drawStaticMatrix();
+        if (!reducedMotion.matches && !matrixRunning && matrixContext && fractalContext) {
           matrixRunning = true;
           matrixLastFrame = performance.now();
           matrixFrame = requestAnimationFrame(drawMatrix);
@@ -441,7 +439,7 @@
           const nextRatio = getMatrixPixelRatio(nextWidth, nextHeight);
           if (nextWidth === matrixWidth && nextHeight === matrixHeight && Math.abs(nextRatio - matrixPixelRatio) < 0.01) return;
           resizeMatrix();
-          if (reducedMotion.matches) drawStaticMatrix();
+          drawStaticMatrix();
         }, 140);
       });
       window.addEventListener('scroll', requestScrollUpdate, { passive: true });
