@@ -4,21 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Nihar Dwivedi — software engineer, problem solver, and builder." />
-    <title>nihar@web:~</title>
-    <link rel="stylesheet" href="css/styles.css?v=20260810-3" />
+    <meta name="theme-color" content="#020704" />
+    <meta name="color-scheme" content="dark" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Nihar Dwivedi — Software Engineer" />
+    <meta property="og:description" content="Scalable systems, thoughtful tooling, and clean engineering." />
+    <meta property="og:url" content="https://nihardwivedi.github.io/" />
+    <meta property="og:image" content="https://nihardwivedi.github.io/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Nihar Dwivedi — Software Engineer" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://nihardwivedi.github.io/og.png" />
+    <link rel="canonical" href="https://nihardwivedi.github.io/" />
+    <title>Nihar Dwivedi — Software Engineer</title>
+    <link rel="stylesheet" href="css/styles.css?v=20260811-1" />
   </head>
   <body>
+    <a class="skip-link" href="#about">Skip to main content</a>
+    <div class="scroll-progress" aria-hidden="true"><span></span></div>
     <main class="site-shell" aria-labelledby="site-title">
       <div class="terminal">
         <header class="terminal-bar">
-          <div class="window-controls" aria-label="Window controls"><button type="button" data-window-action="minimize" aria-label="Minimize window">−</button><button type="button" data-window-action="maximize" aria-label="Maximize window">□</button><button type="button" data-window-action="close" aria-label="Close window">×</button></div>
-          <div class="terminal-prompt"><span class="green">user@ndwivedi</span>:<span class="scarlet">~</span>$ <span class="ink">whoami</span></div>
+          <div class="window-controls" aria-label="Window controls"><button type="button" data-window-action="minimize" aria-label="Minimize portfolio window" aria-pressed="false">−</button><button type="button" data-window-action="maximize" aria-label="Maximize portfolio window" aria-pressed="false">□</button><button type="button" data-window-action="close" aria-label="Close portfolio window">×</button></div>
+          <div class="terminal-prompt"><span class="status-dot" aria-hidden="true"></span><span class="green">nihar@portfolio</span>:<span class="scarlet">~</span>$ <span class="ink">whoami</span></div>
           <nav class="top-nav" aria-label="Main navigation">
             <a href="#about" data-route="about">_about</a>
-            <a href="#skills">_skills</a>
-            <a href="#projects">_projects</a>
-            <a href="#experience">_experience</a>
-            <a href="#contact">_contact</a>
+            <a href="#skills" data-route="skills">_skills</a>
+            <a href="#projects" data-route="projects">_projects</a>
+            <a href="#experience" data-route="experience">_experience</a>
+            <a href="#contact" data-route="contact">_contact</a>
+            <a class="nav-resume" href="nihar_dwivedi_resume.pdf" target="_blank" rel="noreferrer">résumé <span aria-hidden="true">↗</span></a>
           </nav>
         </header>
 
@@ -27,35 +43,44 @@
             <div class="hero-main">
               <div class="hero-copy">
                 <p class="command green">&gt; cat /about.md</p>
-                <h1 id="site-title">Hi, I’m<br /><span>Nihar Dwivedi</span></h1>
+                <div class="availability"><span aria-hidden="true"></span>open to ambitious problems</div>
+                <h1 id="site-title"><small>Hi, I’m</small><span>Nihar Dwivedi</span></h1>
                 <p class="role">// Software Engineer · Problem Solver · Builder</p>
                 <p class="intro">I build scalable systems, craft clean code, and turn complex problems into elegant solutions. Currently exploring the intersection of distributed systems, developer experience, and AI.</p>
-                <p class="command green passion-command">&gt; ls passions/</p>
-                <div class="passions" aria-label="Interests">
-                  <div class="passion"><strong aria-hidden="true">◇</strong><span>system design</span></div>
-                  <div class="passion"><strong aria-hidden="true">&gt;_</strong><span>open source</span></div>
-                  <div class="passion"><strong aria-hidden="true">✣</strong><span>ai/ml</span></div>
-                  <div class="passion"><strong aria-hidden="true">△</strong><span>music &amp; hikes</span></div>
-                  <a class="passion" href="https://news.ycombinator.com/" target="_blank" rel="noreferrer" aria-label="Hacker News"><strong class="passion-logo hacker-news-logo" aria-hidden="true">Y</strong><span>hacker news</span></a>
-                  <a class="passion" href="https://www.crunchyroll.com/" target="_blank" rel="noreferrer" aria-label="Anime on Crunchyroll"><strong class="passion-logo anime-logo" aria-hidden="true">ア</strong><span>anime</span></a>
+                <div class="hero-actions" aria-label="Primary actions">
+                  <a class="button button-primary" href="#projects"><span aria-hidden="true">./</span> explore_work</a>
+                  <a class="button button-secondary" href="nihar_dwivedi_resume.pdf" target="_blank" rel="noreferrer">view_résumé <span aria-hidden="true">↗</span></a>
                 </div>
+                <p class="command green passion-command">&gt; ls passions/</p>
+                <ul class="passions" aria-label="Interests">
+                  <li class="passion"><strong aria-hidden="true">◇</strong><span>system design</span></li>
+                  <li class="passion"><strong aria-hidden="true">&gt;_</strong><span>open source</span></li>
+                  <li class="passion"><strong aria-hidden="true">✣</strong><span>ai/ml</span></li>
+                  <li class="passion"><strong aria-hidden="true">△</strong><span>music &amp; hikes</span></li>
+                  <li class="passion passion-linked"><a href="https://news.ycombinator.com/" target="_blank" rel="noreferrer" aria-label="Hacker News"><strong class="passion-logo hacker-news-logo" aria-hidden="true">Y</strong><span>hacker news</span></a></li>
+                  <li class="passion passion-linked"><a href="https://www.crunchyroll.com/" target="_blank" rel="noreferrer" aria-label="Anime on Crunchyroll"><strong class="passion-logo anime-logo" aria-hidden="true">ア</strong><span>anime</span></a></li>
+                </ul>
                 <p class="terminal-cursor" aria-hidden="true">&gt; <span></span></p>
               </div>
 
               <div class="photo-column">
-                <div class="photo-placeholder" role="img" aria-label="Photo placeholder">
-                  <div class="placeholder-grid" aria-hidden="true"></div>
-                  <div class="placeholder-mark" aria-hidden="true">N</div>
+                <div class="photo-placeholder identity-card" role="img" aria-label="Abstract ND monogram identity graphic">
+                  <div class="placeholder-grid identity-grid" aria-hidden="true"></div>
+                  <span class="identity-orbit orbit-one" aria-hidden="true"></span>
+                  <span class="identity-orbit orbit-two" aria-hidden="true"></span>
+                  <div class="identity-monogram" aria-hidden="true"><span>N</span><span>D</span></div>
+                  <div class="identity-scan" aria-hidden="true"></div>
+                  <div class="identity-coordinates" aria-hidden="true"><span>12.9716° N</span><span>77.5946° E</span></div>
                   <span class="placeholder-corner top-left" aria-hidden="true"></span>
                   <span class="placeholder-corner top-right" aria-hidden="true"></span>
                   <span class="placeholder-corner bottom-left" aria-hidden="true"></span>
                   <span class="placeholder-corner bottom-right" aria-hidden="true"></span>
                 </div>
-                <div class="photo-meta"><span class="scarlet">//</span> profile_image.dat <span class="green">[pending]</span></div>
+                <div class="photo-meta"><span class="scarlet">//</span> identity_key.pub <span class="green">[verified]</span></div>
               </div>
 
               <aside class="system-info">
-                <p class="command green">&gt; system_info</p>
+                <div class="system-heading"><p class="command green">&gt; system_info</p><span>online</span></div>
                 <dl>
                   <div><dt>name:</dt><dd>Nihar Dwivedi</dd></div>
                   <div><dt>role:</dt><dd>Software Engineer</dd></div>
@@ -65,93 +90,95 @@
                   <div><dt>coffee:</dt><dd aria-label="five coffee cups">☕ ☕ ☕ ☕ ☕</dd></div>
                 </dl>
                 <div class="location-history" aria-label="Previous locations"><span>prev:</span><ul><li>Boston, MA</li><li>Dallas, TX</li></ul></div>
-                <div class="uptime"><p class="command green">&gt; uptime</p><strong id="hours-of-code">0</strong><span>hours of code</span></div>
+                <div class="uptime"><p class="command green">&gt; uptime</p><strong>6+</strong><span>years in the craft</span></div>
               </aside>
             </div>
           </section>
 
           <div class="dashboard-grid">
-            <section id="skills" class="panel skills-panel" aria-labelledby="skills-title">
-              <h2 id="skills-title"><span class="green">&gt; cat</span> skills.json</h2>
+            <section id="skills" class="panel skills-panel panel-accent-scarlet" aria-labelledby="skills-title">
+              <h2 id="skills-title"><span class="section-index">01</span><span class="green">&gt; cat</span> skills.json</h2>
               <div class="skill-group language-skills"><h3>languages</h3><div class="skill-cloud language-primary"><span>Rust</span></div><div class="language-era"><h4>before</h4><div class="skill-cloud"><span>Python</span><span>Go</span></div></div><div class="language-era language-era-past"><h4>past</h4><div class="skill-cloud"><span>Java</span><span>JavaScript</span><span>TypeScript</span></div></div></div>
-              <div class="skill-group"><h3>platform &amp; infrastructure</h3><div class="skill-cloud"><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Argo CD</span><span>Vault</span><span>Jenkins</span><span>Shell</span></div></div>
+              <div class="skill-group"><h3>platform &amp; infrastructure</h3><div class="skill-cloud"><span>Nix</span><span>NixOS</span><span>AWS</span><span>Kubernetes</span><span>Docker</span><span>Terraform</span><span>Argo CD</span><span>Vault</span><span>Jenkins</span><span>Shell</span></div></div>
               <div class="skill-group"><h3>data &amp; frameworks</h3><div class="skill-cloud"><span>PostgreSQL</span><span>Redis</span><span>Kafka</span><span>Spark</span><span>HDFS</span><span>HBase</span><span>Solr</span><span>Spring Boot</span><span>React</span></div></div>
               <p class="skills-note"><span class="green">//</span> systems, tooling, and the space between them.</p>
             </section>
 
-            <section id="projects" class="panel projects-panel" aria-labelledby="projects-title">
-              <div class="panel-heading"><h2 id="projects-title"><span class="green">&gt; ls</span> projects/</h2><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer">[view_all]</a></div>
+            <section id="projects" class="panel projects-panel panel-accent-green" aria-labelledby="projects-title">
+              <div class="panel-heading"><h2 id="projects-title"><span class="section-index">02</span><span class="green">&gt; ls</span> projects/</h2><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer">view_all <span aria-hidden="true">↗</span></a></div>
               <div class="project-list">
-                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">◇</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/neural-hack" target="_blank" rel="noreferrer">neural-hack</a> <span>★ 2</span></h3><p>Solutions to the Neural Hack competition organized at Luminaire, KIIT University.</p><div class="tags"><span>Python</span><span>Machine Learning</span><span>Competition</span></div></div><div class="project-preview" aria-hidden="true"><span>model  accuracy</span><b>▁▃▅▆▇▅▆</b></div></article>
-                <article class="project"><div class="project-icon green-icon" aria-hidden="true">&gt;_</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/image-captioning" target="_blank" rel="noreferrer">image-captioning</a> <span>★ 0</span></h3><p>Deep learning models that generate descriptive captions for images.</p><div class="tags"><span>Python</span><span>Jupyter</span><span>Deep Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>image  caption</span><b>▂▅▆▃▇▅▃</b></div></article>
-                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">✣</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/mobile-machine-learning" target="_blank" rel="noreferrer">mobile-machine-learning</a> <span>★ 0</span></h3><p>An exploration of modern embedded machine-learning frameworks on mobile platforms.</p><div class="tags"><span>Kotlin</span><span>Android</span><span>Machine Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>device  inference</span><b>▃▆▅▂▇▅▆</b></div></article>
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">◇</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/neural-hack" target="_blank" rel="noreferrer">neural-hack</a> <span>public repo</span></h3><p>Solutions to the Neural Hack competition organized at Luminaire, KIIT University.</p><div class="tags"><span>Python</span><span>Machine Learning</span><span>Competition</span></div></div><div class="project-preview" aria-hidden="true"><span>model  accuracy</span><b>▁▃▅▆▇▅▆</b></div></article>
+                <article class="project"><div class="project-icon green-icon" aria-hidden="true">&gt;_</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/image-captioning" target="_blank" rel="noreferrer">image-captioning</a> <span>public repo</span></h3><p>Deep learning models that generate descriptive captions for images.</p><div class="tags"><span>Python</span><span>Jupyter</span><span>Deep Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>image  caption</span><b>▂▅▆▃▇▅▃</b></div></article>
+                <article class="project"><div class="project-icon scarlet-icon" aria-hidden="true">✣</div><div class="project-copy"><h3><a href="https://github.com/nihardwivedi/mobile-machine-learning" target="_blank" rel="noreferrer">mobile-machine-learning</a> <span>public repo</span></h3><p>An exploration of modern embedded machine-learning frameworks on mobile platforms.</p><div class="tags"><span>Kotlin</span><span>Android</span><span>Machine Learning</span></div></div><div class="project-preview" aria-hidden="true"><span>device  inference</span><b>▃▆▅▂▇▅▆</b></div></article>
               </div>
             </section>
 
-            <section id="experience" class="panel experience-panel" aria-labelledby="experience-title">
-              <h2 id="experience-title"><span class="green">&gt; cat</span> experience.log</h2>
+            <section id="experience" class="panel experience-panel panel-accent-scarlet" aria-labelledby="experience-title">
+              <h2 id="experience-title"><span class="section-index">03</span><span class="green">&gt; cat</span> experience.log</h2>
               <div class="timeline">
-                <article class="timeline-item" data-start="2023-03-01" data-end="2024-03-01"><time>Mar 2023 — Mar 2024 · Dallas, TX</time><h3>Senior Site Reliability Engineer <span>@ Securonix, Inc.</span></h3><p>Orchestrated AWS and Redis scalability improvements, unlocked new instance types, and reduced annual infrastructure costs through capacity and Spark optimization.</p><small>Tech: AWS, Redis, Spark, Kafka, HDFS, HBase, Solr, MySQL</small></article>
-                <article class="timeline-item" data-start="2022-09-01" data-end="2023-03-01"><time>Sept 2022 — Mar 2023 · Dallas, TX</time><h3>Software Engineer <span>@ Securonix, Inc.</span></h3><p>Delivered Java enhancements and designed a Spring microservice API with UI components, separating resource-intensive ingestion for greater uptime and capacity.</p><small>Tech: Java, Spring, UI engineering, build systems</small></article>
-                <article class="timeline-item" data-start="2021-06-01" data-end="2022-09-01"><time>June 2021 — Sept 2022 · Dallas, TX</time><h3>Cloud Security Engineer <span>@ Securonix, Inc.</span></h3><p>Managed a cloud SIEM data-ingestion pipeline, led on-call incident response, and partnered with Product and Engineering to improve system stability.</p><small>Tech: AWS, Redis, Kafka, Spark, Kubernetes</small></article>
-                <article class="timeline-item" data-start="2020-01-01" data-end="2020-05-01"><time>Jan 2020 — May 2020 · Boston, MA</time><h3>Student Developer <span>@ Red Hat, Inc.</span></h3><p>Built an LSTM metric-alerting model and deployed a Grafana and Prometheus monitoring application on OpenShift; the reviewed work landed in the main repository.</p><small>Tech: Python, OpenShift, Grafana, Prometheus, JupyterHub</small></article>
-                <article class="timeline-item" data-start="2019-01-01" data-end="2019-05-01"><time>Jan 2019 — May 2019 · Hyderabad, India</time><h3>Software Engineer Intern <span>@ Deloitte</span></h3><p>Developed PowerShell, SQL, JavaScript, and C# features for a web-based audit tool, expanding its capabilities and improving documentation and usability.</p><small>Tech: PowerShell, SQL, JavaScript, C#</small></article>
+                <article class="timeline-item"><time datetime="2023-03">Mar 2023 — Mar 2024 · Dallas, TX</time><h3>Senior Site Reliability Engineer <span>@ Securonix, Inc.</span></h3><p>Orchestrated AWS and Redis scalability improvements, unlocked new instance types, and reduced annual infrastructure costs through capacity and Spark optimization.</p><small>Tech: AWS, Redis, Spark, Kafka, HDFS, HBase, Solr, MySQL</small></article>
+                <article class="timeline-item"><time datetime="2022-09">Sept 2022 — Mar 2023 · Dallas, TX</time><h3>Software Engineer <span>@ Securonix, Inc.</span></h3><p>Delivered Java enhancements and designed a Spring microservice API with UI components, separating resource-intensive ingestion for greater uptime and capacity.</p><small>Tech: Java, Spring, UI engineering, build systems</small></article>
+                <article class="timeline-item"><time datetime="2021-06">June 2021 — Sept 2022 · Dallas, TX</time><h3>Cloud Security Engineer <span>@ Securonix, Inc.</span></h3><p>Managed a cloud SIEM data-ingestion pipeline, led on-call incident response, and partnered with Product and Engineering to improve system stability.</p><small>Tech: AWS, Redis, Kafka, Spark, Kubernetes</small></article>
+                <article class="timeline-item"><time datetime="2020-01">Jan 2020 — May 2020 · Boston, MA</time><h3>Student Developer <span>@ Red Hat, Inc.</span></h3><p>Built an LSTM metric-alerting model and deployed a Grafana and Prometheus monitoring application on OpenShift; the reviewed work landed in the main repository.</p><small>Tech: Python, OpenShift, Grafana, Prometheus, JupyterHub</small></article>
+                <article class="timeline-item"><time datetime="2019-01">Jan 2019 — May 2019 · Hyderabad, India</time><h3>Software Engineer Intern <span>@ Deloitte</span></h3><p>Developed PowerShell, SQL, JavaScript, and C# features for a web-based audit tool, expanding its capabilities and improving documentation and usability.</p><small>Tech: PowerShell, SQL, JavaScript, C#</small></article>
               </div>
             </section>
 
-          <section class="panel neofetch-panel" aria-labelledby="neofetch-title">
-            <h2 id="neofetch-title"><span class="green">&gt; fastfetch</span></h2>
-            <pre class="fastfetch-output" aria-label="Fastfetch system information">                     ..'          zack@Wombats-MacBook-Pro
-                 ,xNMM.           ------------------------
-               .OMMMMo            OS: macOS Sequoia 15.3 (24D60) arm64
-               lMM"               Host: MacBook Pro (16-inch, 2021)
-     .;loddo:.  .olloddol;.       Kernel: Darwin 24.3.0
-   cKMMMMMMMMMMNWMMMMMMMMMM0:     Uptime: 13 days, 3 hours, 25 mins
- .KMMMMMMMMMMMMMMMMMMMMMMMWd.     Packages: 133 (brew), 3 (brew-cask)
- XMMMMMMMMMMMMMMMMMMMMMMMX.       Shell: omp
-;MMMMMMMMMMMMMMMMMMMMMMMM:        Display (Color LCD): 3456x2234 @ 2x in 16&quot;, 120 Hz [Built-in]
-:MMMMMMMMMMMMMMMMMMMMMMMM:        WM: Quartz Compositor 1.600.0
-.MMMMMMMMMMMMMMMMMMMMMMMX.       WM Theme: Multicolor (Dark)
- kMMMMMMMMMMMMMMMMMMMMMMMMWd.     Theme: Aqua
- 'XMMMMMMMMMMMMMMMMMMMMMMMMMMk    Font: .AppleSystemUIFont [System], Helvetica [User]
-  'XMMMMMMMMMMMMMMMMMMMMMMMMK.    Cursor: Fill - Black, Outline - White (32px)
-    kMMMMMMMMMMMMMMMMMMMMMMd      Terminal: ghostty 1.3.1
-     ;KMMMMMMMWXXWMMMMMMMk.       Terminal Font: JetBrainsMono Nerd Font (13pt)
-       "cooc*"    "*coo'"         CPU: Apple M1 Pro (8+2) @ 3.23 GHz
-                                  GPU: Apple M1 Pro (16) @ 1.30 GHz [Integrated]
-                                  Memory: 13.46 GiB / 16.00 GiB (84%)
-                                  Swap: 2.23 GiB / 3.00 GiB (74%)
-                                  Disk (/): 212.29 GiB / 460.43 GiB (46%) - apfs [Read-only]
-                                  Battery: 64% (4 hours, 30 mins remaining) [Discharging]
-                                  Locale: en_US.UTF-8
-
-                                  [ green ] [ scarlet ] [ green ]</pre>
+          <section class="panel workspace-panel panel-accent-green" aria-labelledby="workspace-title">
+            <h2 id="workspace-title"><span class="section-index">04</span><span class="green">&gt; ./</span> current_focus.sh</h2>
+            <div class="workspace-console">
+              <div class="workspace-mark" aria-hidden="true">
+                <pre>     ╭──────╮
+  ╭──┤  ND  ├──╮
+  │  ╰──┬───╯  │
+  ├─────●──────┤
+  │  build()   │
+  ╰────────────╯</pre>
+                <span class="workspace-ping"></span>
+              </div>
+              <div class="workspace-details">
+                <div class="workspace-user"><span>nihar@portfolio</span><small>session active</small></div>
+                <dl>
+                  <div><dt>base</dt><dd>Bengaluru, IN</dd></div>
+                  <div><dt>focus</dt><dd>distributed systems</dd></div>
+                  <div><dt>craft</dt><dd>developer experience</dd></div>
+                  <div><dt>exploring</dt><dd>applied AI</dd></div>
+                </dl>
+                <div class="signal-row" aria-label="Current focus signals"><span>systems</span><span>tooling</span><span>reliability</span></div>
+              </div>
+            </div>
+            <p class="workspace-foot"><span class="green">●</span> compiling ideas into useful things</p>
           </section>
           </div>
-          <section id="contact" class="panel contact-panel" aria-labelledby="contact-title">
-            <h2 id="contact-title"><span class="green">&gt;</span> contact_me.sh</h2>
-            <div class="contact-grid"><a href="mailto:dwivedi.nihar@gmail.com"><strong class="contact-icon">✉</strong><span><b>email</b>dwivedi.nihar@gmail.com</span></a><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">◉</strong><span><b>github</b>github.com/nihardwivedi</span></a><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon">in</strong><span><b>linkedin</b>linkedin.com/in/nihardwivedi</span></a><a href="mailto:dwivedi.nihar@gmail.com"><strong class="contact-icon">⌖</strong><span><b>location</b>Bengaluru, IN</span></a></div>
+          <section id="contact" class="panel contact-panel panel-accent-scarlet" aria-labelledby="contact-title">
+            <div class="contact-heading"><div><h2 id="contact-title"><span class="section-index">05</span><span class="green">&gt;</span> contact_me.sh</h2><p>Have a hard problem or an interesting idea? Let’s talk.</p></div><span class="contact-status"><i aria-hidden="true"></i> accepting packets</span></div>
+            <div class="contact-grid"><a href="mailto:dwivedi.nihar@gmail.com"><strong class="contact-icon" aria-hidden="true">✉</strong><span><b>email</b>dwivedi.nihar@gmail.com</span></a><a href="https://github.com/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon" aria-hidden="true">◉</strong><span><b>github</b>github.com/nihardwivedi</span></a><a href="https://www.linkedin.com/in/nihardwivedi" target="_blank" rel="noreferrer"><strong class="contact-icon" aria-hidden="true">in</strong><span><b>linkedin</b>linkedin.com/in/nihardwivedi</span></a><a href="https://maps.google.com/?q=Bengaluru%2C+India" target="_blank" rel="noreferrer"><strong class="contact-icon" aria-hidden="true">⌖</strong><span><b>location</b>Bengaluru, IN</span></a></div>
           </section>
 
           <footer class="terminal-footer"><span>Thanks for visiting! — Now, go build something awesome.</span><span class="green">&gt; exit <b class="cursor-block" aria-hidden="true"></b></span></footer>
         </div>
       </div>
-      <div class="matrix-screen" hidden><canvas class="matrix-rain" aria-hidden="true"></canvas><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
+      <div class="matrix-screen" role="dialog" aria-modal="true" aria-label="Portfolio window closed" hidden><canvas class="matrix-rain" aria-hidden="true"></canvas><button class="matrix-open" type="button" aria-label="Reopen portfolio window"><span aria-hidden="true">&gt;_</span></button></div>
     </main>
 
     <script>
       const routes = [...document.querySelectorAll('[data-route]')];
+      const routeSections = routes.map((link) => document.querySelector(link.getAttribute('href'))).filter(Boolean);
       const terminal = document.querySelector('.terminal');
       const matrixScreen = document.querySelector('.matrix-screen');
       const matrixCanvas = document.querySelector('.matrix-rain');
       const matrixContext = matrixCanvas.getContext('2d');
       const controls = [...document.querySelectorAll('[data-window-action]')];
+      const reopenButton = matrixScreen.querySelector('.matrix-open');
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
       const matrixCharacters = 'アカサタナハマヤラワ0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ';
       let matrixColumns = [];
       let matrixWidth = 0;
       let matrixHeight = 0;
       let matrixFrame = 0;
       let matrixRunning = false;
+      let scrollTicking = false;
+      let minimizedScrollPosition = 0;
 
       const resizeMatrix = () => {
         const density = 18;
@@ -179,24 +206,121 @@
         });
         matrixFrame = requestAnimationFrame(drawMatrix);
       };
-      const startMatrix = () => { if (!matrixRunning) { matrixRunning = true; resizeMatrix(); drawMatrix(); } };
-      const stopMatrix = () => { matrixRunning = false; cancelAnimationFrame(matrixFrame); };
-      const setActiveRoute = () => routes.forEach((link) => link.classList.toggle('is-active', link.getAttribute('href') === (window.location.hash || '#about')));
-      const toggleWindow = (action) => {
-        if (action === 'minimize') terminal.classList.toggle('is-minimized');
-        if (action === 'maximize') terminal.classList.toggle('is-maximized');
-        if (action === 'close') { terminal.hidden = true; matrixScreen.hidden = false; document.body.classList.add('window-closed'); startMatrix(); }
+      const startMatrix = () => {
+        resizeMatrix();
+        if (!matrixRunning && !reducedMotion.matches) {
+          matrixRunning = true;
+          drawMatrix();
+        }
       };
-      controls.forEach((button) => button.addEventListener('click', () => toggleWindow(button.dataset.windowAction)));
-      matrixScreen.querySelector('.matrix-open').addEventListener('click', () => { stopMatrix(); terminal.hidden = false; matrixScreen.hidden = true; document.body.classList.remove('window-closed'); });
-      routes.forEach((link) => link.addEventListener('click', () => window.requestAnimationFrame(setActiveRoute)));
+      const stopMatrix = () => { matrixRunning = false; cancelAnimationFrame(matrixFrame); };
+      const setActiveRoute = (sectionId = 'about') => routes.forEach((link) => {
+        const isActive = link.dataset.route === sectionId;
+        link.classList.toggle('is-active', isActive);
+        if (isActive) link.setAttribute('aria-current', 'location');
+        else link.removeAttribute('aria-current');
+      });
+      const updateScrollState = () => {
+        const root = document.documentElement;
+        const maximized = terminal.classList.contains('is-maximized');
+        const scrollTop = maximized ? terminal.scrollTop : window.scrollY;
+        const scrollHeight = maximized ? terminal.scrollHeight : root.scrollHeight;
+        const clientHeight = maximized ? terminal.clientHeight : root.clientHeight;
+        const scrollable = scrollHeight - clientHeight;
+        const progress = scrollable > 0 ? Math.min(scrollTop / scrollable, 1) : 0;
+        document.querySelector('.scroll-progress span').style.transform = `scaleX(${progress})`;
+
+        const marker = Math.min(window.innerHeight * 0.34, 300);
+        const positions = routeSections.map((section) => ({ section, top: section.getBoundingClientRect().top }));
+        const passedSections = positions.filter(({ top }) => top <= marker);
+        const nearestTop = passedSections.length ? Math.max(...passedSections.map(({ top }) => top)) : positions[0].top;
+        const nearestSections = positions.filter(({ top }) => Math.abs(top - nearestTop) < 6).map(({ section }) => section);
+        const currentRoute = routes.find((link) => link.classList.contains('is-active'))?.dataset.route;
+        const hashRoute = window.location.hash.slice(1);
+        let activeSection = nearestSections.find((section) => section.id === currentRoute)
+          || nearestSections.find((section) => section.id === hashRoute)
+          || nearestSections[0]
+          || routeSections[0];
+        if (clientHeight + scrollTop >= scrollHeight - 8) activeSection = routeSections.at(-1);
+        if (activeSection) setActiveRoute(activeSection.id);
+        scrollTicking = false;
+      };
+      const requestScrollUpdate = () => {
+        if (!scrollTicking) {
+          scrollTicking = true;
+          requestAnimationFrame(updateScrollState);
+        }
+      };
+      const reopenWindow = () => {
+        stopMatrix();
+        terminal.hidden = false;
+        matrixScreen.hidden = true;
+        document.body.classList.remove('window-closed');
+        controls.find((button) => button.dataset.windowAction === 'close').focus();
+      };
+      const toggleWindow = (action, button) => {
+        if (action === 'minimize') {
+          const minimizing = !terminal.classList.contains('is-minimized');
+          if (minimizing) minimizedScrollPosition = terminal.classList.contains('is-maximized') ? terminal.scrollTop : window.scrollY;
+          const maximizeButton = controls.find((control) => control.dataset.windowAction === 'maximize');
+          terminal.classList.remove('is-maximized');
+          document.body.classList.remove('window-maximized');
+          maximizeButton.setAttribute('aria-pressed', 'false');
+          maximizeButton.setAttribute('aria-label', 'Maximize portfolio window');
+          const minimized = terminal.classList.toggle('is-minimized');
+          button.textContent = minimized ? '+' : '−';
+          button.setAttribute('aria-pressed', String(minimized));
+          button.setAttribute('aria-label', minimized ? 'Restore portfolio window' : 'Minimize portfolio window');
+          if (!minimized) requestAnimationFrame(() => {
+            window.scrollTo(0, minimizedScrollPosition);
+            requestScrollUpdate();
+          });
+        }
+        if (action === 'maximize') {
+          const minimizeButton = controls.find((control) => control.dataset.windowAction === 'minimize');
+          terminal.classList.remove('is-minimized');
+          minimizeButton.textContent = '−';
+          minimizeButton.setAttribute('aria-pressed', 'false');
+          minimizeButton.setAttribute('aria-label', 'Minimize portfolio window');
+          const maximized = terminal.classList.toggle('is-maximized');
+          document.body.classList.toggle('window-maximized', maximized);
+          button.setAttribute('aria-pressed', String(maximized));
+          button.setAttribute('aria-label', maximized ? 'Restore portfolio window' : 'Maximize portfolio window');
+          requestScrollUpdate();
+        }
+        if (action === 'close') {
+          terminal.hidden = true;
+          matrixScreen.hidden = false;
+          document.body.classList.add('window-closed');
+          startMatrix();
+          reopenButton.focus();
+        }
+      };
+      controls.forEach((button) => button.addEventListener('click', () => toggleWindow(button.dataset.windowAction, button)));
+      reopenButton.addEventListener('click', reopenWindow);
+      routes.forEach((link) => link.addEventListener('click', () => setActiveRoute(link.dataset.route)));
+      terminal.addEventListener('pointermove', (event) => {
+        if (reducedMotion.matches) return;
+        const bounds = terminal.getBoundingClientRect();
+        terminal.style.setProperty('--pointer-x', `${event.clientX - bounds.left}px`);
+        terminal.style.setProperty('--pointer-y', `${event.clientY - bounds.top}px`);
+      });
       window.addEventListener('resize', () => { if (matrixRunning) resizeMatrix(); });
-      setActiveRoute();
-      const experienceEntries = [...document.querySelectorAll('.timeline-item[data-start][data-end]')];
-      const monthsBetween = (start, end) => (end.getUTCFullYear() - start.getUTCFullYear()) * 12 + end.getUTCMonth() - start.getUTCMonth();
-      const totalExperienceMonths = experienceEntries.reduce((total, entry) => total + monthsBetween(new Date(`${entry.dataset.start}T00:00:00Z`), new Date(`${entry.dataset.end}T00:00:00Z`)), 0);
-      document.querySelector('#hours-of-code').textContent = (totalExperienceMonths * 160).toLocaleString();
-      window.addEventListener('hashchange', setActiveRoute);
+      window.addEventListener('scroll', requestScrollUpdate, { passive: true });
+      terminal.addEventListener('scroll', requestScrollUpdate, { passive: true });
+      window.addEventListener('hashchange', requestScrollUpdate);
+      document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        if (!matrixScreen.hidden) reopenWindow();
+        else if (terminal.classList.contains('is-maximized')) toggleWindow('maximize', controls.find((button) => button.dataset.windowAction === 'maximize'));
+      });
+      const handleMotionPreference = () => {
+        if (reducedMotion.matches) stopMatrix();
+        else if (!matrixScreen.hidden) startMatrix();
+      };
+      if (reducedMotion.addEventListener) reducedMotion.addEventListener('change', handleMotionPreference);
+      else reducedMotion.addListener(handleMotionPreference);
+      updateScrollState();
     </script>
   </body>
 </html>
