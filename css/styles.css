@@ -155,10 +155,10 @@ a:focus-visible { outline: 1px solid var(--scarlet); outline-offset: 0.25rem; }
 .color-strip i:nth-child(2n) { background: var(--scarlet); }
 .color-strip i:nth-child(3n) { background: var(--purple); }
 .contact-panel { margin-top: 1rem; }
-.contact-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
-.contact-grid a { align-items: center; border-right: 1px solid var(--border-soft); display: flex; gap: 0.85rem; min-height: 4rem; padding: 0 1.2rem; }
-.contact-grid a:first-child { padding-left: 0.25rem; }
-.contact-grid a:last-child { border-right: 0; }
+.contact-grid { display: grid; gap: 0.75rem; grid-template-columns: repeat(4, 1fr); }
+.contact-grid a { align-items: center; border: 1px solid var(--border-soft); display: flex; gap: 0.85rem; min-height: 4rem; padding: 0.75rem; transition: background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease; }
+.contact-grid a:hover, .contact-grid a:focus-visible { background: rgba(255, 64, 85, 0.08); border-color: var(--scarlet); box-shadow: 0 0 1rem rgba(255, 64, 85, 0.18); transform: translateY(-0.12rem); }
+.contact-grid a:nth-child(even):hover, .contact-grid a:nth-child(even):focus-visible { background: rgba(34, 232, 121, 0.08); border-color: var(--green); box-shadow: 0 0 1rem rgba(34, 232, 121, 0.18); }
 .contact-icon { align-items: center; border: 1px solid var(--scarlet); color: var(--scarlet); display: flex; font-size: 1.45rem; font-weight: 400; height: 2.8rem; justify-content: center; width: 2.8rem; }
 .contact-grid a:nth-child(even) .contact-icon { border-color: var(--green); color: var(--green); }
 .contact-grid span { color: var(--muted); display: flex; flex-direction: column; font-size: 0.68rem; overflow-wrap: anywhere; }
@@ -182,3 +182,5 @@ a:focus-visible { outline: 1px solid var(--scarlet); outline-offset: 0.25rem; }
 .matrix-open:hover, .matrix-open:focus-visible { background: var(--green); color: var(--background); transform: scale(1.08); }
 .window-closed { overflow: hidden; }
 .matrix-screen[hidden] { display: none; }
+@media (max-width: 48rem) { .contact-grid { gap: 0.65rem; } .contact-grid a, .contact-grid a:first-child, .contact-grid a:nth-child(odd), .contact-grid a:last-child { border: 1px solid var(--border-soft); padding: 0.75rem; } }
+@media (max-width: 34rem) { .contact-grid a, .contact-grid a:first-child, .contact-grid a:nth-child(odd), .contact-grid a:last-child { padding: 0.75rem; } }

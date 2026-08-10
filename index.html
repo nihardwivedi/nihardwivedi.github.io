@@ -65,7 +65,7 @@
                   <div><dt>coffee:</dt><dd aria-label="five coffee cups">☕ ☕ ☕ ☕ ☕</dd></div>
                 </dl>
                 <div class="location-history" aria-label="Previous locations"><span>prev:</span><ul><li>Boston, MA</li><li>Dallas, TX</li></ul></div>
-                <div class="uptime"><p class="command green">&gt; uptime</p><strong>8113</strong><span>hours of code</span></div>
+                <div class="uptime"><p class="command green">&gt; uptime</p><strong id="hours-of-code">0</strong><span>hours of code</span></div>
               </aside>
             </div>
           </section>
@@ -91,11 +91,11 @@
             <section id="experience" class="panel experience-panel" aria-labelledby="experience-title">
               <h2 id="experience-title"><span class="green">&gt; cat</span> experience.log</h2>
               <div class="timeline">
-                <article class="timeline-item"><time>Mar 2023 — Mar 2024 · Dallas, TX</time><h3>Senior Site Reliability Engineer <span>@ Securonix, Inc.</span></h3><p>Orchestrated AWS and Redis scalability improvements, unlocked new instance types, and reduced annual infrastructure costs through capacity and Spark optimization.</p><small>Tech: AWS, Redis, Spark, Kafka, HDFS, HBase, Solr, MySQL</small></article>
-                <article class="timeline-item"><time>Sept 2022 — Mar 2023 · Dallas, TX</time><h3>Software Engineer <span>@ Securonix, Inc.</span></h3><p>Delivered Java enhancements and designed a Spring microservice API with UI components, separating resource-intensive ingestion for greater uptime and capacity.</p><small>Tech: Java, Spring, UI engineering, build systems</small></article>
-                <article class="timeline-item"><time>June 2021 — Sept 2022 · Dallas, TX</time><h3>Cloud Security Engineer <span>@ Securonix, Inc.</span></h3><p>Managed a cloud SIEM data-ingestion pipeline, led on-call incident response, and partnered with Product and Engineering to improve system stability.</p><small>Tech: AWS, Redis, Kafka, Spark, Kubernetes</small></article>
-                <article class="timeline-item"><time>Jan 2020 — May 2020 · Boston, MA</time><h3>Student Developer <span>@ Red Hat, Inc.</span></h3><p>Built an LSTM metric-alerting model and deployed a Grafana and Prometheus monitoring application on OpenShift; the reviewed work landed in the main repository.</p><small>Tech: Python, OpenShift, Grafana, Prometheus, JupyterHub</small></article>
-                <article class="timeline-item"><time>Jan 2019 — May 2019 · Hyderabad, India</time><h3>Software Engineer Intern <span>@ Deloitte</span></h3><p>Developed PowerShell, SQL, JavaScript, and C# features for a web-based audit tool, expanding its capabilities and improving documentation and usability.</p><small>Tech: PowerShell, SQL, JavaScript, C#</small></article>
+                <article class="timeline-item" data-start="2023-03-01" data-end="2024-03-01"><time>Mar 2023 — Mar 2024 · Dallas, TX</time><h3>Senior Site Reliability Engineer <span>@ Securonix, Inc.</span></h3><p>Orchestrated AWS and Redis scalability improvements, unlocked new instance types, and reduced annual infrastructure costs through capacity and Spark optimization.</p><small>Tech: AWS, Redis, Spark, Kafka, HDFS, HBase, Solr, MySQL</small></article>
+                <article class="timeline-item" data-start="2022-09-01" data-end="2023-03-01"><time>Sept 2022 — Mar 2023 · Dallas, TX</time><h3>Software Engineer <span>@ Securonix, Inc.</span></h3><p>Delivered Java enhancements and designed a Spring microservice API with UI components, separating resource-intensive ingestion for greater uptime and capacity.</p><small>Tech: Java, Spring, UI engineering, build systems</small></article>
+                <article class="timeline-item" data-start="2021-06-01" data-end="2022-09-01"><time>June 2021 — Sept 2022 · Dallas, TX</time><h3>Cloud Security Engineer <span>@ Securonix, Inc.</span></h3><p>Managed a cloud SIEM data-ingestion pipeline, led on-call incident response, and partnered with Product and Engineering to improve system stability.</p><small>Tech: AWS, Redis, Kafka, Spark, Kubernetes</small></article>
+                <article class="timeline-item" data-start="2020-01-01" data-end="2020-05-01"><time>Jan 2020 — May 2020 · Boston, MA</time><h3>Student Developer <span>@ Red Hat, Inc.</span></h3><p>Built an LSTM metric-alerting model and deployed a Grafana and Prometheus monitoring application on OpenShift; the reviewed work landed in the main repository.</p><small>Tech: Python, OpenShift, Grafana, Prometheus, JupyterHub</small></article>
+                <article class="timeline-item" data-start="2019-01-01" data-end="2019-05-01"><time>Jan 2019 — May 2019 · Hyderabad, India</time><h3>Software Engineer Intern <span>@ Deloitte</span></h3><p>Developed PowerShell, SQL, JavaScript, and C# features for a web-based audit tool, expanding its capabilities and improving documentation and usability.</p><small>Tech: PowerShell, SQL, JavaScript, C#</small></article>
               </div>
             </section>
 
@@ -192,6 +192,10 @@
       routes.forEach((link) => link.addEventListener('click', () => window.requestAnimationFrame(setActiveRoute)));
       window.addEventListener('resize', () => { if (matrixRunning) resizeMatrix(); });
       setActiveRoute();
+      const experienceEntries = [...document.querySelectorAll('.timeline-item[data-start][data-end]')];
+      const monthsBetween = (start, end) => (end.getUTCFullYear() - start.getUTCFullYear()) * 12 + end.getUTCMonth() - start.getUTCMonth();
+      const totalExperienceMonths = experienceEntries.reduce((total, entry) => total + monthsBetween(new Date(`${entry.dataset.start}T00:00:00Z`), new Date(`${entry.dataset.end}T00:00:00Z`)), 0);
+      document.querySelector('#hours-of-code').textContent = (totalExperienceMonths * 160).toLocaleString();
       window.addEventListener('hashchange', setActiveRoute);
     </script>
   </body>
