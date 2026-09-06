@@ -87,7 +87,7 @@
     }
     finish.hidden = false;
     const start = performance.now();
-    const duration = Math.min(6500, characters.length * 12);
+    const duration = Math.min(3250, characters.length * 6);
     function tick(now) {
       const end = Math.min(
         characters.length,
