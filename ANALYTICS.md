@@ -28,7 +28,8 @@ homepage is instrumented; the Nix course is a separate site.
 The footer displays **Homepage visits**, matching GoatCounter's default metric:
 repeat loads of the same page within a session are deduplicated. It is not a count
 of every refresh or a lifetime count of distinct people. Counts start when
-tracking is activated and cannot recover past traffic.
+tracking is activated and cannot recover past traffic. The `data-count-start` date
+is September 17, 2026, when analytics was enabled for this site.
 
 The public count endpoint can be cached for up to four hours. A blocked tracker
 or disabled JavaScript can cause undercounting. If the count endpoint is disabled

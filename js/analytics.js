@@ -29,17 +29,24 @@
     const controller = new AbortController();
     const timeout = setTimeout(() => controller.abort(), 8000);
     try {
-      const response = await fetch(`${site.origin}/counter/${encodeURIComponent("/")}.json`, {
+      const endpoint = new URL(`/counter/${encodeURIComponent("/")}.json`, site.origin);
+      // Keep the public total scoped to the day analytics was enabled.
+      const start = counter.dataset.countStart;
+      if (start && /^\d{4}-\d{2}-\d{2}$/.test(start)) endpoint.searchParams.set("start", start);
+      const response = await fetch(endpoint.href, {
         credentials: "omit",
         referrerPolicy: "no-referrer",
         signal: controller.signal,
       });
-      if (!response.ok) throw new Error("Counter unavailable");
+      // GoatCounter returns a JSON zero with 404 for a page without visits yet.
+      if (!response.ok && response.status !== 404) throw new Error("Counter unavailable");
       const data = await response.json();
       const raw = String(data.count ?? "").replaceAll(",", "");
       if (!/^\d+$/.test(raw)) throw new Error("Invalid count");
       const count = Number(raw);
-      if (!Number.isSafeInteger(count)) throw new Error("Invalid count");
+      if (!Number.isSafeInteger(count) || (response.status === 404 && count !== 0)) {
+        throw new Error("Invalid count");
+      }
       value.textContent = new Intl.NumberFormat("en").format(count);
     } catch {
       // Never replace an unavailable shared count with a fabricated zero.
